@@ -9,28 +9,180 @@ tags: [documentation]
 ---
 
 ## Plan for this tutorial
-In this tutorial we're going to download OrthoFinder and its dependencies and then run it on the example dataset. I'm going to be downloading everything to a directory called '/home/david/orthofinder-tutorial/', assuming you use something different then you'll need to change the commands accordingly. At the time of writing the latest version of OrthoFinder was 'OrthoFinder-2.3.3.tar.gz', you'll need to change the commands to whatever version number you are using.
+In this tutorial we're going to download OrthoFinder and run it on the Example Dataset. All these steps will be done on the command line so that you can just copy and run them yourself. We're going to use the simplest 'download and run' version. If you have any issues with this then refer to the manual for other options.
 
-## Downloading and setting up OrthoFinder
+## Downloading and running OrthoFinder
 
-### 1. Download OrthoFinder
-> Go to the [releases](https://github.com/davidemms/OrthoFinder) page on the OrthoFinder github site.
-
-This page contains concise instructions for setting up and running OrthoFinder and describes the results files and various options. In comparison, this tutorial is going to guide you through the basics step by step.  
-
-> Download the latest release (at the time of writing it's called OrthoFinder-2.3.3.tar.gz and is under 'Assets'.
-
-The file needs to be extracted:
-> Open a terminal, navigate to the directory where you downloaded OrthoFinder and extract 
+1. Create a directory to work in
+> Open a terminal
 ```
-cd /home/david/orthofinder-tutorial/
-tar xzf OrthoFinder-2.3.3.tar.gz
+mkdir ~/orthofinder_tutorial
+cd ~/orthofinder_tutorial
+```
+
+2. Download the latest version of OrthoFinder
+```
+wget https://github.com/davidemms/OrthoFinder/releases/latest/download/OrthoFinder.tar.gz
+```
+
+3. Extract the package, and move into the OrthoFinder directory
+```
+tar xzvf OrthoFinder.tar.gz
+```
+
+4. Get OrthoFinder to print its help file
+```
+./orthofinder -h
+```
+
+5. Run OrthoFinder on the Example Dataset
+```
+./orthofinder -f ExampleData/
 ```
 
 This will extract a folder called 'OrthoFinder-2.3.3' into your current directory.
 
-### 2. Install the dependencies
+### 2. A quick look at the results
+In this tutorial I'll just give you a few pointers towards all the results files. For a fuller exploration see [Running your own OrthoFinder analysis ](/orthofinder_tutorials/running-your-own-orthofinder-analysis.html). 
 
-### 3. Get OrthoFinder to print its help file
+When you run OrthoFinder you should get something like this:
+```
+emms@host2253:~/orthofinder_tutorial$ ./orthofinder -f ExampleData/
 
-### 4. Run OrthoFinder on the Example Dataset
+OrthoFinder version 2.3.6 Copyright (C) 2014 David Emms
+
+2019-10-11 15:24:21 : Starting OrthoFinder
+48 thread(s) for highly parallel tasks (BLAST searches etc.)
+1 thread(s) for OrthoFinder algorithm
+
+Checking required programs are installed
+----------------------------------------
+Test can run "mcl -h" - ok
+Test can run "fastme -i /home/emms/orthofinder_tutorial/ExampleData/OrthoFinder/Results_Oct11/WorkingDirectory/SimpleTest.phy -o /home/emms/orthofinder_tutorial/ExampleData/OrthoFinder/Results_Oct11/WorkingDirectory/SimpleTest.tre" - ok
+
+Dividing up work for BLAST for parallel processing
+--------------------------------------------------
+2019-10-11 15:24:21 : Creating diamond database 1 of 4
+2019-10-11 15:24:21 : Creating diamond database 2 of 4
+2019-10-11 15:24:21 : Creating diamond database 3 of 4
+2019-10-11 15:24:21 : Creating diamond database 4 of 4
+
+Running diamond all-versus-all
+------------------------------
+Using 48 thread(s)
+2019-10-11 15:24:21 : This may take some time....
+2019-10-11 15:24:30 : Done all-versus-all sequence search
+
+Running OrthoFinder algorithm
+-----------------------------
+2019-10-11 15:24:30 : Initial processing of each species
+2019-10-11 15:24:30 : Initial processing of species 0 complete
+2019-10-11 15:24:30 : Initial processing of species 1 complete
+2019-10-11 15:24:30 : Initial processing of species 2 complete
+2019-10-11 15:24:30 : Initial processing of species 3 complete
+2019-10-11 15:24:33 : Connected putatitive homologs
+2019-10-11 15:24:33 : Written final scores for species 0 to graph file
+2019-10-11 15:24:33 : Written final scores for species 1 to graph file
+2019-10-11 15:24:33 : Written final scores for species 2 to graph file
+2019-10-11 15:24:33 : Written final scores for species 3 to graph file
+2019-10-11 15:24:33 : Ran MCL
+
+Writing orthogroups to file
+---------------------------
+Orthogroups have been written to tab-delimited files:
+   /home/emms/orthofinder_tutorial/ExampleData/OrthoFinder/Results_Oct11/Orthogroups/Orthogroups.tsv
+   /home/emms/orthofinder_tutorial/ExampleData/OrthoFinder/Results_Oct11/Orthogroups/Orthogroups.txt (OrthoMCL format)
+   /home/emms/orthofinder_tutorial/ExampleData/OrthoFinder/Results_Oct11/Orthogroups/Orthogroups_UnassignedGenes.tsv
+Sequences for orthogroups:
+   /home/emms/orthofinder_tutorial/ExampleData/OrthoFinder/Results_Oct11/Orthogroup_Sequences/
+
+2019-10-11 15:24:34 : Done orthogroups
+
+Analysing Orthogroups
+=====================
+
+Calculating gene distances
+--------------------------
+2019-10-11 15:24:36 : Done
+
+Inferring gene and species trees
+--------------------------------
+2019-10-11 15:24:36 : Done 0 of 325
+2019-10-11 15:24:36 : Done 100 of 325
+2019-10-11 15:24:36 : Done 200 of 325
+
+269 trees had all species present and will be used by STAG to infer the species tree
+
+
+Best outgroup(s) for species tree
+---------------------------------
+2019-10-11 15:24:41 : Starting STRIDE
+2019-10-11 15:24:41 : Done STRIDE
+Observed 2 well-supported, non-terminal duplications. 2 support the best roots and 0 contradict them.
+Best outgroups for species tree:
+  Mycoplasma_hyopneumoniae
+  Mycoplasma_agalactiae, Mycoplasma_hyopneumoniae
+  Mycoplasma_agalactiae
+
+
+Multiple potential species tree roots were identified, only one will be analyed.
+================================================================================
+
+Reconciling gene trees and species tree
+---------------------------------------
+Outgroup: Mycoplasma_hyopneumoniae
+2019-10-11 15:24:41 : Starting Recon and orthologues
+2019-10-11 15:24:41 : Starting OF Orthologues
+2019-10-11 15:24:42 : Done 0 of 325
+2019-10-11 15:24:42 : Done 100 of 325
+2019-10-11 15:24:42 : Done 200 of 325
+2019-10-11 15:24:42 : Done 300 of 325
+2019-10-11 15:24:42 : Done OF Orthologues
+2019-10-11 15:24:42 : Done Recon
+
+Writing results files
+=====================
+2019-10-11 15:24:42 : Done orthologues
+Orthogroups have been written to tab-delimited files:
+   /home/emms/orthofinder_tutorial/ExampleData/OrthoFinder/Results_Oct11/Orthogroups/Orthogroups.tsv
+   /home/emms/orthofinder_tutorial/ExampleData/OrthoFinder/Results_Oct11/Orthogroups/Orthogroups.txt (OrthoMCL format)
+   /home/emms/orthofinder_tutorial/ExampleData/OrthoFinder/Results_Oct11/Orthogroups/Orthogroups_UnassignedGenes.tsv
+Sequences for orthogroups:
+   /home/emms/orthofinder_tutorial/ExampleData/OrthoFinder/Results_Oct11/Orthogroup_Sequences/
+
+
+Gene trees:
+   /home/emms/orthofinder_tutorial/ExampleData/OrthoFinder/Results_Oct11/Gene_Trees/
+
+Rooted species tree:
+   /home/emms/orthofinder_tutorial/ExampleData/OrthoFinder/Results_Oct11/Species_Tree/SpeciesTree_rooted.txt
+
+Species-by-species orthologues directory:
+   /home/emms/orthofinder_tutorial/ExampleData/OrthoFinder/Results_Oct11/Orthologues/
+
+Orthogroup statistics:
+   Statistics_PerSpecies.tsv   Statistics_Overall.tsv   Orthogroups_SpeciesOverlaps.tsv
+
+OrthoFinder assigned 2202 genes (80.6% of total) to 604 orthogroups. Fifty percent of all genes were in orthogroups with 4 or more genes (G50 was 4) and were contained in the largest 281 orthogroups (O50 was 281). There were 269 orthogroups with all species present and 246 of these consisted entirely of single-copy genes.
+
+CITATION:
+ When publishing work that uses OrthoFinder please cite:
+ Emms D.M. & Kelly S. (2015), Genome Biology 16:157
+
+ If you use the species tree in your work then please also cite:
+ Emms D.M. & Kelly S. (2017), MBE 34(12): 3267-3278
+ Emms D.M. & Kelly S. (2018), bioRxiv https://doi.org/10.1101/267914
+```
+
+OrthoFinder creates a directory within your input directory and puts all the results there, e.g.: `ExampleData/OrthoFinder/Results_Oct11`. This is what the directory looks like:
+
+<img src="{{ site.github.url }}/assets/img/results_directory.png">
+
+The contents of these files are described here: [https://github.com/davidemms/OrthoFinder#what-orthofinder-provides](https://github.com/davidemms/OrthoFinder#what-orthofinder-provides). The main files and directories are:
+
+* **Orthologues/** - Contains one file for each pair of species giving all the orthologues between those to species.
+    * E.g.: **Orthologues/Orthologues_Mycoplasma_agalactiae/Mycoplasma_agalactiae__v__Mycoplasma_gallisepticum.tsv**
+
+* **Orthogroups/Orthogroups.tsv** - Lists the orthogroups, one line per orthogroup and with genes from each species in columns
+
+* **Gene_Trees/** - Contains all the gene trees. Note that each orthologue and each orthogroup in the above files references the name of the orthogroup in which those genes can be found.

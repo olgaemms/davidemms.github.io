@@ -42,3 +42,5 @@ For this reason, use a concise naming style for your files. For example, when I 
 OrthoFinder will try and find a set of short, unique gene names to reference each sequence, by testing if the first (space-delimited) word on each accession line is unique. If they are, then genes will be identified by these names. Otherwise, the complete accession lines will be used to refer to each gene. Because of the quadratic nature of orthology (one orthologs result file per species pair), each gene name will get written out O(n) times, so for large analyses getting your accession lines tidy will result in a considerable saving in terms of disk space and also the time taken by OrthoFinder to write out all the ortholog results files!
 
 If you've used the script above for Ensembl proteomes then the files will have already been correctly interpretted so that they are in a suitable format, with a single gene identifier for each sequence. 
+
+## Running OrthoFinder with a corrected species tree.
