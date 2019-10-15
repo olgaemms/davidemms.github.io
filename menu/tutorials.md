@@ -1,24 +1,29 @@
 ---
 layout: page
-title: Tutorials
+title: Step-by Step Tutorials
 ---
+
+<h3>Getting Started</h3>
 <ul class="posts">
-  {% for post in site.posts %}
-
-    {% unless post.next %}
-      <h3>{{ post.date | date: '%Y' }}</h3>
-    {% else %}
-      {% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
-      {% capture nyear %}{{ post.next.date | date: '%Y' }}{% endcapture %}
-      {% if year != nyear %}
-        <h3>{{ post.date | date: '%Y' }}</h3>
-      {% endif %}
-    {% endunless %}
-
+  {% assign posts_in_order = site.posts | sort %}
+  {% for post in posts_in_order %}
+    {% if post.post_type == "getting_started" %}
     <li itemscope>
       <a href="{{ site.github.url }}{{ post.url }}">{{ post.title }}</a>
-      <p class="post-date"><span><i class="fa fa-calendar" aria-hidden="true"></i> {{ post.date | date: "%B %-d" }} - <i class="fa fa-clock-o" aria-hidden="true"></i> {% include read-time.html %}</span></p>
+      <p class="post-date"><span><i class="fa fa-clock-o" aria-hidden="true"></i> {% include read-time.html %}</span></p>
     </li>
+    {% endif %}
+  {% endfor %}
+
+<h3>Using OrthoFinder for Comparative Genomics</h3>
+<ul class="posts">
+  {% for post in site.posts %}
+    {% if post.post_type == "applications" %}
+    <li itemscope>
+      <a href="{{ site.github.url }}{{ post.url }}">{{ post.title }}</a>
+      <p class="post-date"><span><i class="fa fa-clock-o" aria-hidden="true"></i> {% include read-time.html %}</span></p>
+    </li>
+    {% endif %}
 
   {% endfor %}
 </ul>

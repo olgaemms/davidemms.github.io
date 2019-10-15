@@ -4,6 +4,7 @@ title: "4. Getting the most from your OrthoFinder analysis"
 author: "David Emms"
 categories: orthofinder_tutorials
 tags: [documentation]
+post_type: getting_started
 ---
 
 ## Selecting which species to include

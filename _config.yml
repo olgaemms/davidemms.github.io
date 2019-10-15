@@ -8,7 +8,7 @@
 #   title: ':title - page :num of :max'
 #   limit: 0
 #   sort_field: 'date'
-#   sort_reverse: true
+#   sort_reverse: false
 
 # jekyll-paginate configuration
 paginate:            5
