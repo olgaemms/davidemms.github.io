@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Diving into the results"
+title: "3. Diving into the results"
 author: "David Emms"
 categories: orthofinder_tutorials
 tags: [documentation]
@@ -14,7 +14,7 @@ In the last tutorial we downloaded a set of proteomes from 6 model species, prep
 In this tutorial we're going to explore the results of the OrthoFinder's comparative genomics analysis. The analysis OrthoFinder performs is pretty extensive so we'll start with the key results and explore them as you would explore your own results. 
 
 ## A first look at the results
-By default OrthoFinder creates a results directory called 'OrthoFinder' inside the input proteome directory and puts the reults here. My results directory looks like this: 
+By default OrthoFinder creates a results directory called 'OrthoFinder' inside the input proteome directory and puts the results here. My results directory looks like this: 
  <img src="{{ site.github.url }}/assets/img/ModelSpeciesResults.png">
 
 If you want, you can see a description of the complete set of results files [here](<https://github.com/davidemms/OrthoFinder#what-orthofinder-provides>). 
@@ -37,15 +37,15 @@ That's pretty good, in general it's nice to see at least 80% of your genes assig
 Once you've opened this file you'll see that the vertebrates all have over 90% of their genes assigned to orthogroups whereas *Drosophila* and *C. elegans* are between 70-80%. This is probably due to species sampling. The four vertebrate species are all relatively closely related whereas the species sampling around both *Drosophila* and *C. elegans* was poor. To improve this we would need to include some species that break up the long branches in the species tree separating these species from all the others.
 
 ## Species Tree
-Let's look at the species tree next. [Dendroscope](http://dendroscope.org/) is a tree viewer you can download and run locally and is the best option if you're going to look at many trees. There are also a number of options you can run from you're web browser, e.g. the [ETE Toolkit tree viewer](http://etetoolkit.org/treeview/). Using one of these, open the file **Species_Tree/SpeciesTree_rooted.txt**. As this file has bootstrap values, with Denderoscope you'll need to select the option "Interpret as edge labels" to view them correctly. The species tree looks like this:
+Let's look at the species tree next. [Dendroscope](http://dendroscope.org/) is a tree viewer you can download and run locally and is the best option if you're going to look at many trees. There are also a number of options you can run from you're web browser, e.g. the [ETE Toolkit tree viewer](http://etetoolkit.org/treeview/). Using one of these, open the file **Species_Tree/SpeciesTree_rooted.txt**. As this file has bootstrap values, with Dendroscope you'll need to select the option "Interpret as edge labels" to view them correctly. The species tree looks like this:
  <img src="{{ site.github.url }}/assets/img/SpeciesTree_rooted.png">
 
  You can see here that *Drosophila* and *C. elegans* are on longer branches than the other species, as mentioned above. If you know what the species tree should look like, you can also check that it is actually correct. In this case it is!
  
- If the species tree is not correct then this will not impact the orthogroup inference, but it might affect the orthologue inference in some of the gene trees which have gene duplication events. In this case, you'll probably want to run the very last bit of the OrthoFinder analysis again with the corrected species tree. This is generally pretty quick, as all the computationally expensive calculation (of gene trees etc.) has already been done. See [Getting the most from your OrthoFinder analysis](/orthofinder_tutorials/geting-the-most-from-your-orthofinder-analysis.md).
+ If the species tree is not correct then this will not impact the orthogroup inference, but it might affect the orthologue inference in some of the gene trees which have gene duplication events. In this case, you'll probably want to run the very last bit of the OrthoFinder analysis again with the corrected species tree. This is generally pretty quick, as all the computationally expensive calculation (of gene trees etc.) has already been done. See [Getting the most from your OrthoFinder analysis](/orthofinder_tutorials/getting-the-most-from-your-orthofinder-analysis.html).
  
  > Aside:
- > You'll notice hin this tree that the support values are not all 100%, which you might have expected them to be for this dataset. With the default options, species tree inference is performed with [STAG](https://www.biorxiv.org/content/10.1101/267914v1), which uses the proportion of species trees dervied from **single-locus gene trees** supporting each bipartition as its measure of support. This is a more stringent measure. If instead the "-M msa" option had been used then a concatenated multiple sequence alignment would have been used for the species tree inference instead and support values of 100% would have been seen for all bipartition. In this case the support values correspond to bootstrap replicates taken from the full, **multi-gene alignment**, which is a different thing entirely.
+ > You'll notice hin this tree that the support values are not all 100%, which you might have expected them to be for this dataset. With the default options, species tree inference is performed with [STAG](https://www.biorxiv.org/content/10.1101/267914v1), which uses the proportion of species trees derived from **single-locus gene trees** supporting each bipartition as its measure of support. This is a more stringent measure. If instead the "-M msa" option had been used then a concatenated multiple sequence alignment would have been used for the species tree inference instead and support values of 100% would have been seen for all bipartition. In this case the support values correspond to bootstrap replicates taken from the full, **multi-gene alignment**, which is a different thing entirely.
 
 ## Orthologues
 One of the most common reasons for running OrthoFinder is to find the orthologue of a gene you're interested in. Let's look at the orthologues of the *Drosophila* gene FBgn0002973, which is involved in the cleavage and polyadenylation steps of the nuclear cleavage/polyadenylation reaction (see [FlyBase](http://flybase.org/reports/FBgn0005648.html)). This is an interesting gene since there have been two gene duplication events in the lineage leading to humans, as we'll see. Let's find out what it's orthologues are in human.
@@ -59,7 +59,7 @@ We've found that FBgn0005648 has three orthologues in human. Next we're going to
 
 <img src="{{ site.github.url }}/assets/img/OG0002001_tree.png">
 
-If you are used to inferrring and looking at gene trees the first thing you'll notice is that OrthoFinder has automatically rooted the tree for you&mdash;the tree is rooted on the *C. elegans* gene WBGene00003904. This makes it really convenient for quickly checking gene trees and is expecially useful for more complex, harder to interpret gene trees. 
+If you are used to inferring and looking at gene trees the first thing you'll notice is that OrthoFinder has automatically rooted the tree for you&mdash;the tree is rooted on the *C. elegans* gene WBGene00003904. This makes it really convenient for quickly checking gene trees and is especially useful for more complex, harder to interpret gene trees. 
 
 >Aside: The default gene trees don't have support values. OrthoFinder has, after all, assigned ~117,000 genes into orthogroups and inferred over 16,000 gene trees for these genes in about 15 minutes! We'll discuss how to get support values in a later tutorial.
 
@@ -68,11 +68,21 @@ Looking at the gene tree we can see that two gene duplication events occurred, o
 We can look at the page for this gene on FlyBase: <http://flybase.org/reports/FBgn0005648.html>. If you go down to the "Orthologs" section, and then look at "Human Orthologs" you'll see that the only methods that identified all three of these orthologues were the tree-based methods Compara, eggNOG, OrthoFinder and TreeFam. OrthoFinder is the only one that you can run on your own data. The score-based methods such as Hieranoid, Inparanoid, OMA and OrthoMCL identified only one, or none, of these orthologues. Gene trees are particularly important for identifying and resolving these complex relationships.
 
 ## Gene Duplication Events
-Having the gene trees means that OrthoFinder can identify all gene duplication events that occurred. Let's look at those that happened in the common ancestor of the vertebrates. OrthoFinder labels the nodes of the species tree in the file **Species_Tree/SpeciesTree_rooted_node_labels.txt**, open this with Dendropscope and tell it to "Interpret as node labels". The node we're interested in is 'N2', the common ancestor of *D. rerio*, *X. tropicalis*, *H. sapiens* and *M. musculus*. There are two files that give details about the gene duplications events. Let's first open **Gene_Duplication_Events/SpeciesTree_Gene_Duplications_0.5_Support.txt** in Dendroscope. 
+Having the gene trees means that OrthoFinder can identify all gene duplication events that occurred. Let's look at those that happened in the common ancestor of the vertebrates. OrthoFinder labels the nodes of the species tree in the file **Species_Tree/SpeciesTree_rooted_node_labels.txt**, open this with Dendropscope and tell it to "Interpret as node labels". We'll look at the node 'N3', the common ancestor of tetrapods (i.e. *X. tropicalis*, *H. sapiens* and *M. musculus*). There are two files that give details about the gene duplications events. Let's first open **Gene_Duplication_Events/SpeciesTree_Gene_Duplications_0.5_Support.txt** in Dendroscope. 
 
 
 <img src="{{ site.github.url }}/assets/img/SpeciesTree_Gene_Duplications_0.5_Support.png">
 
-This gives a summary of gene duplication events. Each node shows the number of well-supported gene duplication event mapped to each node in the species tree. Gene-duplication events are considered 'well-supported' if at least 50% of the descendant species have retained both copies of the duplicated gene. For the common ancestor of the tetrapods, N2, there were 2988 of these well-supported gene duplication events. We can see the list of these gene duplication events in the file **Gene_Duplication_Events/Duplications.tsv**. Here a just a few lines from the file:
+This gives a summary of gene duplication events. Each node shows the number of well-supported gene duplication events mapped to each node in the species tree. Gene-duplication events are considered 'well-supported' if at least 50% of the descendant species have retained both copies of the duplicated gene. For the common ancestor of the tetrapods, N3, there were 261 of these well-supported gene duplication events. We can see the list of these gene duplication events in the file **Gene_Duplication_Events/Duplications.tsv**. Here are just a few lines from the file, sorted by the species tree node on which they occurred:
 
-<img src="{{ site.github.url }}/assets/img/Screenshot_GeneDuplicationEvents.png">
+<img src="{{ site.github.url }}/assets/img/Gene_Duplication_Events_N3.png">
+
+Each gene duplication event is cross-references to the species tree node, the orthogroup/gene tree in which it occurred and the location in that gene tree. It also list the genes descended from each of the two copies arising from the gene duplication event. We can check this out for our FBgn0005648 orthologues. For this we need to look at the gene tree in the **Resolved_Gene_Trees/OG0002001_tree.txt**. This directory contains the gene trees with the nodes labelled. These files show how OrthoFinder interpreted the gene trees when inferring orthologues and gene duplication events. They can differ slightly from the original gene trees if OrthoFinder identifies a more parsimonious interpretation of the tree.
+
+<img src="{{ site.github.url }}/assets/img/OG0002001_resolved_tree.png">
+
+Reading from the table, there was a gene duplication event at node n3 with both copies 100% retained in all the descendant species. Looking at the tree, the second gene duplication event was on node n7, and if we go back to the table we can see that this one is listed as well:
+
+<img src="{{ site.github.url }}/assets/img/OG0002001_duplications_partial.png">
+
+If you're interested in gene duplication events then this table contains a lot of data. Across these six species OrthoFinder identified 39,174 gene duplication events, all of which are cross-referenced to the gene tree in which they occurred! These events are also summarised by orthogroup and by species tree node in the **Comparative_Genomics_Statistics/** files **Duplications_per_Orthogroup.tsv and **Duplications_per_Species_Tree_Node.tsv**.

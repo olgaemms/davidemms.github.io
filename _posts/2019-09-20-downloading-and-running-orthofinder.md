@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Downloading and running OrthoFinder"
+title: "1. Downloading and running OrthoFinder"
 author: "David Emms"
 categories: orthofinder_tutorials
 tags: [documentation]
@@ -13,8 +13,7 @@ In this tutorial we're going to download OrthoFinder and run it on the Example D
 
 ## Downloading and running OrthoFinder
 
-1. Create a directory to work in
-> Open a terminal
+1. Create a directory to work in. Open a terminal and run
 ```
 mkdir ~/orthofinder_tutorial
 cd ~/orthofinder_tutorial
@@ -25,29 +24,29 @@ cd ~/orthofinder_tutorial
 wget https://github.com/davidemms/OrthoFinder/releases/latest/download/OrthoFinder.tar.gz
 ```
 
-3. Extract the package, and move into the OrthoFinder directory
+3. Extract the package, and cd into the OrthoFinder directory
 ```
 tar xzvf OrthoFinder.tar.gz
+cd OrthoFinder/
 ```
 
 4. Get OrthoFinder to print its help file
 ```
 ./orthofinder -h
 ```
+This will print all the OrthoFinder command line options. 
 
 5. Run OrthoFinder on the Example Dataset
 ```
 ./orthofinder -f ExampleData/
 ```
 
-This will extract a folder called 'OrthoFinder-2.3.3' into your current directory.
-
 ### 2. A quick look at the results
-In this tutorial I'll just give you a few pointers towards all the results files. For a fuller exploration see [Running your own OrthoFinder analysis ](/orthofinder_tutorials/running-your-own-orthofinder-analysis.html). 
+In this tutorial I'll just give you a few pointers towards all the results files. See the later tutorials for more details.
 
 When you run OrthoFinder you should get something like this:
 ```
-emms@host2253:~/orthofinder_tutorial$ ./orthofinder -f ExampleData/
+~/orthofinder_tutorial$ ./orthofinder -f ExampleData/
 
 OrthoFinder version 2.3.6 Copyright (C) 2014 David Emms
 
@@ -80,7 +79,7 @@ Running OrthoFinder algorithm
 2019-10-11 15:24:30 : Initial processing of species 1 complete
 2019-10-11 15:24:30 : Initial processing of species 2 complete
 2019-10-11 15:24:30 : Initial processing of species 3 complete
-2019-10-11 15:24:33 : Connected putatitive homologs
+2019-10-11 15:24:33 : Connected putative homologues
 2019-10-11 15:24:33 : Written final scores for species 0 to graph file
 2019-10-11 15:24:33 : Written final scores for species 1 to graph file
 2019-10-11 15:24:33 : Written final scores for species 2 to graph file

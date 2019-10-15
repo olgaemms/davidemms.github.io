@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Running your own OrthoFinder analysis"
+title: "2. Running your own OrthoFinder analysis"
 author: "David Emms"
 categories: orthofinder_tutorials
 tags: [documentation]
@@ -14,7 +14,7 @@ Once you've downloaded OrthoFinder and checked you can run it on the Example Dat
 In this tutorial we're going to download the proteomes for the species we want to analyse and run OrthoFinder on those species. In the next tutorial we'll dive into the results. I downloaded OrthoFinder to a directory called '/home/david/orthofinder-tutorial/', if you downloaded it to somewhere else then change the paths in the commands as appropriate.
 
 ## Downloading proteomes for our species. 
-In this tutorial we're going to perform a phylogenomic analysis across a set of model species: mouse, human, frog, zebrafish, fruit fly and *Caenorhabditis elegans*. For chosing the species to include in your own analysis see the post [Getting the most from your OrthoFinder analysis](/orthofinder_tutorials/getting-the-most-from-your-orthofinder-analysis.html).
+In this tutorial we're going to perform a phylogenomic analysis across a set of model species: mouse, human, frog, zebrafish, fruit fly and *Caenorhabditis elegans*. For choosing the species to include in your own analysis see the post [Getting the most from your OrthoFinder analysis](/orthofinder_tutorials/getting-the-most-from-your-orthofinder-analysis.html).
 
 1. Create a folder called "proteomes". It's best if there aren't any spaces in the path for this folder (e.g. "/home/david/orthofinder-tutorial/proteomes/" and not "/home/david/orthofinder tutorial/proteomes/").
 
@@ -26,7 +26,7 @@ In this tutorial we're going to perform a phylogenomic analysis across a set of 
 
 4. Go back to the Ensembl main page and repeat for Mouse, Zebrafish, Tropical clawed frog (*Xenopus tropicalis*, under 'Amphibians'), *Drosophila melanogaster" and *C. elegans*. If the is a choice of files, chose the '.pep.all.fa.gz' file. 
 
-5. Open a terminal and navigate to the directory that you downloaded the files to. The files are all compressesed (they end in '.gz'), decompress them all using the command `gunzip *.gz`. 
+5. Open a terminal and navigate to the directory that you downloaded the files to. The files are all compressed (they end in '.gz'), decompress them all using the command `gunzip *.gz`. 
 
 6. The files from Ensembl will contain many transcript per gene. If we ran OrthoFinder on these raw files it would take 10x longer than necessary. We'll use a script provided with OrthoFinder to extract just the longest transcript variant per gene and run OrthoFinder on these files.
 ```
@@ -59,4 +59,4 @@ CITATION:
 
 ```
 
-That's it, the next tutorial is: [Diving into the results](/orthofinder_tutorials/diving-into-the-results.html). If you haven't finished running OrthoFinder then it also contains a link that you can download the results from.
+That's it! The next tutorial is: [Diving into the results](/orthofinder_tutorials/diving-into-the-results.html). If you haven't finished running OrthoFinder then you can download an archive of the results files from that tutorial.
