@@ -1,0 +1,27 @@
+<div class="related">
+  <h1 >Next tutorial</h1>
+  {% assign listed_posts_urls = page.url | split: ' ' %}
+  <ul class="next-posts">
+        <ul class="posts">
+                {% assign found_this = false %}
+                {% assign done = false %}
+                {% assign posts_in_order = site.posts | sort %}
+                {% for post in posts_in_order %}
+                  {% unless done == true %}
+                    {% if post.post_type == page.post_type %}
+                    {% if found_this == true %}
+                        <li itemscope>
+                            <a href="{{ site.github.url }}{{ post.url }}">{{ post.title }}</a>
+                            <p class="post-date"><span><i class="fa fa-clock-o" aria-hidden="true"></i> {% include read-time.html %}</span></p>
+                        </li>
+                    {% assign done = true %} 
+                    {% endif %}
+                        {% if page.title == post.title %}
+                            {% assign found_this = true %}
+                        {% endif %}
+                    {% endif %}
+                    {% endunless %}
+                {% endfor %}
+            </ul>             
+  </ul>
+</div>

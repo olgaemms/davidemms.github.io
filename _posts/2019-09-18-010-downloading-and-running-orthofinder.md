@@ -24,7 +24,12 @@ cd ~/orthofinder_tutorial
 ```
 wget https://github.com/davidemms/OrthoFinder/releases/latest/download/OrthoFinder.tar.gz
 ```
-
+    
+    > If you don't have wget installed, you can try curl:
+    `curl -L -O https://github.com/davidemms/OrthoFinder/releases/latest/download/OrthoFinder.tar.gz`
+    
+    > Alternatively, go to the GitHub releases page and download OrthoFinder: <https://github.com/davidemms/OrthoFinder/releases>
+    
 3. Extract the package, and cd into the OrthoFinder directory
 ```
 tar xzvf OrthoFinder.tar.gz
@@ -36,6 +41,7 @@ cd OrthoFinder/
 ./orthofinder -h
 ```
 This will print all the OrthoFinder command line options. 
+    >If you have an old OS you might not have the required libc version and get an error which includes `version 'GLIBC_2.25' not found`. In this case, you can download a version of OrthoFinder using an older library: `wget https://github.com/davidemms/OrthoFinder/releases/latest/download/OrthoFinder_glibc-2.17.tar.gz` and use that.
 
 5. Run OrthoFinder on the Example Dataset
 ```
@@ -48,121 +54,95 @@ When you run OrthoFinder you should get something like this:
 ```
 ~/orthofinder_tutorial$ ./orthofinder -f ExampleData/
 
-OrthoFinder version 2.3.6 Copyright (C) 2014 David Emms
+OrthoFinder version 2.3.7 Copyright (C) 2014 David Emms
 
-2019-10-11 15:24:21 : Starting OrthoFinder
+2019-10-23 11:12:56 : Starting OrthoFinder
 48 thread(s) for highly parallel tasks (BLAST searches etc.)
 1 thread(s) for OrthoFinder algorithm
 
 Checking required programs are installed
 ----------------------------------------
 Test can run "mcl -h" - ok
-Test can run "fastme -i /home/emms/orthofinder_tutorial/ExampleData/OrthoFinder/Results_Oct11/WorkingDirectory/SimpleTest.phy -o /home/emms/orthofinder_tutorial/ExampleData/OrthoFinder/Results_Oct11/WorkingDirectory/SimpleTest.tre" - ok
+Test can run "fastme -i /home/emms/orthofinder_tutorial/ExampleDataset/OrthoFinder/Results_Oct23/WorkingDirectory/SimpleTest.phy -o /home/emms/orthofinder_tutorial/ExampleDataset/OrthoFinder/Results_Oct23/WorkingDirectory/SimpleTest.tre" - ok
 
 Dividing up work for BLAST for parallel processing
 --------------------------------------------------
-2019-10-11 15:24:21 : Creating diamond database 1 of 4
-2019-10-11 15:24:21 : Creating diamond database 2 of 4
-2019-10-11 15:24:21 : Creating diamond database 3 of 4
-2019-10-11 15:24:21 : Creating diamond database 4 of 4
+2019-10-23 11:12:56 : Creating diamond database 1 of 4
+2019-10-23 11:12:56 : Creating diamond database 2 of 4
+2019-10-23 11:12:56 : Creating diamond database 3 of 4
+2019-10-23 11:12:56 : Creating diamond database 4 of 4
 
 Running diamond all-versus-all
 ------------------------------
 Using 48 thread(s)
-2019-10-11 15:24:21 : This may take some time....
-2019-10-11 15:24:30 : Done all-versus-all sequence search
+2019-10-23 11:12:56 : This may take some time....
+2019-10-23 11:13:05 : Done all-versus-all sequence search
 
 Running OrthoFinder algorithm
 -----------------------------
-2019-10-11 15:24:30 : Initial processing of each species
-2019-10-11 15:24:30 : Initial processing of species 0 complete
-2019-10-11 15:24:30 : Initial processing of species 1 complete
-2019-10-11 15:24:30 : Initial processing of species 2 complete
-2019-10-11 15:24:30 : Initial processing of species 3 complete
-2019-10-11 15:24:33 : Connected putative homologues
-2019-10-11 15:24:33 : Written final scores for species 0 to graph file
-2019-10-11 15:24:33 : Written final scores for species 1 to graph file
-2019-10-11 15:24:33 : Written final scores for species 2 to graph file
-2019-10-11 15:24:33 : Written final scores for species 3 to graph file
-2019-10-11 15:24:33 : Ran MCL
+2019-10-23 11:13:05 : Initial processing of each species
+2019-10-23 11:13:05 : Initial processing of species 0 complete
+2019-10-23 11:13:05 : Initial processing of species 1 complete
+2019-10-23 11:13:06 : Initial processing of species 2 complete
+2019-10-23 11:13:06 : Initial processing of species 3 complete
+2019-10-23 11:13:08 : Connected putative homologues
+2019-10-23 11:13:08 : Written final scores for species 0 to graph file
+2019-10-23 11:13:08 : Written final scores for species 1 to graph file
+2019-10-23 11:13:08 : Written final scores for species 2 to graph file
+2019-10-23 11:13:09 : Written final scores for species 3 to graph file
+2019-10-23 11:13:09 : Ran MCL
 
 Writing orthogroups to file
 ---------------------------
-Orthogroups have been written to tab-delimited files:
-   /home/emms/orthofinder_tutorial/ExampleData/OrthoFinder/Results_Oct11/Orthogroups/Orthogroups.tsv
-   /home/emms/orthofinder_tutorial/ExampleData/OrthoFinder/Results_Oct11/Orthogroups/Orthogroups.txt (OrthoMCL format)
-   /home/emms/orthofinder_tutorial/ExampleData/OrthoFinder/Results_Oct11/Orthogroups/Orthogroups_UnassignedGenes.tsv
-Sequences for orthogroups:
-   /home/emms/orthofinder_tutorial/ExampleData/OrthoFinder/Results_Oct11/Orthogroup_Sequences/
+OrthoFinder assigned 2202 genes (80.6% of total) to 604 orthogroups. Fifty percent of all genes were in orthogroups with 4 or more genes (G50 was 4) and were contained in the largest 281 orthogroups (O50 was 281). There were 269 orthogroups with all species present and 246 of these consisted entirely of single-copy genes.
 
-2019-10-11 15:24:34 : Done orthogroups
+2019-10-23 11:13:15 : Done orthogroups
 
 Analysing Orthogroups
 =====================
 
 Calculating gene distances
 --------------------------
-2019-10-11 15:24:36 : Done
+2019-10-23 11:13:19 : Done
 
 Inferring gene and species trees
 --------------------------------
-2019-10-11 15:24:36 : Done 0 of 325
-2019-10-11 15:24:36 : Done 100 of 325
-2019-10-11 15:24:36 : Done 200 of 325
+2019-10-23 11:13:19 : Done 0 of 325
+2019-10-23 11:13:19 : Done 100 of 325
+2019-10-23 11:13:19 : Done 200 of 325
 
 269 trees had all species present and will be used by STAG to infer the species tree
 
-
 Best outgroup(s) for species tree
 ---------------------------------
-2019-10-11 15:24:41 : Starting STRIDE
-2019-10-11 15:24:41 : Done STRIDE
+2019-10-23 11:13:27 : Starting STRIDE
+2019-10-23 11:13:28 : Done STRIDE
 Observed 2 well-supported, non-terminal duplications. 2 support the best roots and 0 contradict them.
 Best outgroups for species tree:
   Mycoplasma_hyopneumoniae
   Mycoplasma_agalactiae, Mycoplasma_hyopneumoniae
   Mycoplasma_agalactiae
 
-
-Multiple potential species tree roots were identified, only one will be analyed.
-================================================================================
+WARNING: Multiple potential species tree roots were identified, only one will be analyed.
 
 Reconciling gene trees and species tree
 ---------------------------------------
 Outgroup: Mycoplasma_hyopneumoniae
-2019-10-11 15:24:41 : Starting Recon and orthologues
-2019-10-11 15:24:41 : Starting OF Orthologues
-2019-10-11 15:24:42 : Done 0 of 325
-2019-10-11 15:24:42 : Done 100 of 325
-2019-10-11 15:24:42 : Done 200 of 325
-2019-10-11 15:24:42 : Done 300 of 325
-2019-10-11 15:24:42 : Done OF Orthologues
-2019-10-11 15:24:42 : Done Recon
+2019-10-23 11:13:28 : Starting Recon and orthologues
+2019-10-23 11:13:28 : Starting OF Orthologues
+2019-10-23 11:13:28 : Done 0 of 325
+2019-10-23 11:13:29 : Done 100 of 325
+2019-10-23 11:13:30 : Done 200 of 325
+2019-10-23 11:13:32 : Done 300 of 325
+2019-10-23 11:13:32 : Done OF Orthologues
+2019-10-23 11:13:32 : Done Recon
 
 Writing results files
 =====================
-2019-10-11 15:24:42 : Done orthologues
-Orthogroups have been written to tab-delimited files:
-   /home/emms/orthofinder_tutorial/ExampleData/OrthoFinder/Results_Oct11/Orthogroups/Orthogroups.tsv
-   /home/emms/orthofinder_tutorial/ExampleData/OrthoFinder/Results_Oct11/Orthogroups/Orthogroups.txt (OrthoMCL format)
-   /home/emms/orthofinder_tutorial/ExampleData/OrthoFinder/Results_Oct11/Orthogroups/Orthogroups_UnassignedGenes.tsv
-Sequences for orthogroups:
-   /home/emms/orthofinder_tutorial/ExampleData/OrthoFinder/Results_Oct11/Orthogroup_Sequences/
+2019-10-23 11:13:32 : Done orthologues
 
-
-Gene trees:
-   /home/emms/orthofinder_tutorial/ExampleData/OrthoFinder/Results_Oct11/Gene_Trees/
-
-Rooted species tree:
-   /home/emms/orthofinder_tutorial/ExampleData/OrthoFinder/Results_Oct11/Species_Tree/SpeciesTree_rooted.txt
-
-Species-by-species orthologues directory:
-   /home/emms/orthofinder_tutorial/ExampleData/OrthoFinder/Results_Oct11/Orthologues/
-
-Orthogroup statistics:
-   Statistics_PerSpecies.tsv   Statistics_Overall.tsv   Orthogroups_SpeciesOverlaps.tsv
-
-OrthoFinder assigned 2202 genes (80.6% of total) to 604 orthogroups. Fifty percent of all genes were in orthogroups with 4 or more genes (G50 was 4) and were contained in the largest 281 orthogroups (O50 was 281). There were 269 orthogroups with all species present and 246 of these consisted entirely of single-copy genes.
+Results:
+    /home/emms/orthofinder_tutorial/ExampleDataset/OrthoFinder/Results_Oct23/
 
 CITATION:
  When publishing work that uses OrthoFinder please cite:

@@ -15,11 +15,11 @@ In the first tutorial you downloaded OrthoFinder and checked you could run it on
 In this tutorial we're going to download the proteomes for a set of species we want to analyse, tidy the files up a little and run OrthoFinder on those species. In the next tutorial we'll dive into the results. 
 
 ## Downloading proteomes for our species
-We're going to perform a phylogenomic analysis across a set of model species: mouse, human, frog, zebrafish, fruit fly and *Caenorhabditis elegans*. If you've returned to this tutorial to guide you through your own analysis you may want check out the advice on species selection in the post, [Getting the most from your OrthoFinder analysis](/orthofinder_tutorials/getting-the-most-from-your-orthofinder-analysis.html).
+We're going to perform a phylogenomic analysis across a set of model species: mouse, human, frog, zebrafish, fruit fly and *Caenorhabditis elegans*. If you've returned to this tutorial to guide you through your own analysis you may want check out the advice on species selection in the post, [Getting the most from your OrthoFinder analysis](/orthofinder_tutorials/040-getting-the-most-from-your-orthofinder-analysis.html).
 
 1. Create a folder called "proteomes". It's best if there aren't any spaces in the full path for this folder (e.g. "/home/david/orthofinder-tutorial/proteomes/" and not "/home/david/orthofinder tutorial/proteomes/").
 
-2. Go to <https://www.ensembl.org/>, this is generally the first place to look from proteomes. Click on "Human" under "Favourite genomes".
+2. Go to <https://www.ensembl.org/>, this is generally the first place to look from proteomes. Click on "Human" under "Favourite genomes". (If you're downloading data from other websites you might find this post useful: [Getting input data](/orthofinder_tutorials/110-getting-input-data.html))
 
 3. OrthoFinder requires as input the amino acid sequences for all the protein coding genes in your species of interest. The sequences for each species should be in a separate file. When a genome of a species is sequenced and made available, two major steps are performed, assembly and annotation. Assembly is the piecing together of the individual reads into the genome sequence. Annotation is the identification of features of interest in the genome assembly, such as protein coding genes. Therefore, the files we need will often be in a section called 'annotation'. On Ensembl, on the right hand side, under "Gene annotation" click "Download FASTA".
  <img src="{{ site.github.url }}/assets/img/ensembl_human_genome.png">

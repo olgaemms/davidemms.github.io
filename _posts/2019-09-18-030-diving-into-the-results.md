@@ -19,7 +19,7 @@ By default OrthoFinder creates a results directory called 'OrthoFinder' inside t
  <img src="{{ site.github.url }}/assets/img/ModelSpeciesResults.png">
 
 ## Quality Control: Percentage of genes in orthogroups
-The first thing I like to check is how many genes were assigned to orthogroups. At the end of the OrthoFinder run, just before the citation information, it printed this text:
+The first thing I like to check is how many genes were assigned to orthogroups. In the output from OrthoFinder it printed this text:
 > OrthoFinder assigned 116961 genes (89.4% of total) to 18098 orthogroups.
 
 (This info is also in **Comparative_Genomics_Statistics/Statistics_Overall.tsv**.) 
@@ -41,7 +41,7 @@ Let's look at the species tree next. [Dendroscope](http://dendroscope.org/) is a
 
  This tree has been inferred by OrthoFinder using the [STAG](https://doi.org/10.1101/267914) algorithm and rooted using the [STRIDE](https://doi.org/10.1093/molbev/msx259) algoirithm so it's ready to interpret (ordinarily you would have to root a tree yourself). You can see here that *Drosophila* and *C. elegans* are on longer branches than the other species, as mentioned above. If you know what the species tree should look like, you should check that the tree matches what you expect. The tree OrthoFinder inferred here is correct.
  
- If the species tree is not correct then this will not impact the orthogroup inference, but it might affect the orthologue inference in some of the gene trees which have gene duplication events. In this case, you'll probably want to run the very last bit of the OrthoFinder analysis again with the corrected species tree (`-ft` and `-s` options). This is generally pretty quick, as all the computationally expensive calculation (inference of orthogroups and gene trees etc.) has already been done. See [Getting the most from your OrthoFinder analysis](/orthofinder_tutorials/getting-the-most-from-your-orthofinder-analysis.html).
+ If the species tree is not correct then this will not impact the orthogroup inference, but it might affect the orthologue inference in some of the gene trees which have gene duplication events. In this case, you'll probably want to run the very last bit of the OrthoFinder analysis again with the corrected species tree (`-ft` and `-s` options). This is generally pretty quick, as all the computationally expensive calculation (inference of orthogroups and gene trees etc.) has already been done. See [Getting the most from your OrthoFinder analysis](/orthofinder_tutorials/040-getting-the-most-from-your-orthofinder-analysis.html).
  
  > Aside:
  > You'll notice in this tree that the support values are not all 100%, which you might have expected them to be for this dataset. With the default options, species tree inference is performed with [STAG](https://www.biorxiv.org/content/10.1101/267914v1), which uses the proportion of species trees derived from **single-locus gene trees** supporting each bipartition as its measure of support. This is a more stringent measure. If instead the "-M msa" option had been used then a concatenated multiple sequence alignment would have been used for the species tree inference instead and support values of 100% would have been seen for all bipartition. In this case the support values correspond to bootstrap replicates taken from the full, **multi-gene alignment**, which is a different thing entirely. This is the most common measure for support and will always report higher support values for the same data.
@@ -52,7 +52,7 @@ One of the most common reasons for running OrthoFinder is to find the orthologue
 In the **Orthologues** directory there is a sub-directory for each species. Open **Orthologues/Orthologues_Drosophila_melanogaster/Drosophila_melanogaster__v__Homo_sapiens.tsv** in a spreadsheet program (specifying that it's tab-delimited if necessary). The file has three columns, "Orthogroup", "Drosophila_melanogaster" and "Homo_sapiens". Find "FBgn0005648" in the table, you'll see that the gene is in orthogroup OG0002001 and that it has three orthologues in human: ENSG00000205022, ENSG00000100836, ENSG00000258643. 
 
 ## Gene Trees
-(There's an introduction to gene trees here: [Understanding gene trees](/orthofinder_tutorials/understanding-gene-trees.md))
+<!--- (There's an introduction to gene trees here: [Understanding gene trees](/orthofinder_tutorials/understanding-gene-trees.md))--->
 
 We've found that FBgn0005648 has three orthologues in human. Next we're going to look at the gene tree to see if we agree with this and to see how these three orthologues arose. Open **Gene_Trees/OG0002001_tree.txt** with Dendroscope or a web-based viewer.
 
