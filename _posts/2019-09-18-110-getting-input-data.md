@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "A1. Getting input data"
+title: "A2. Getting input data"
 author: "David Emms"
 categories: orthofinder_tutorials
 tags: [documentation]

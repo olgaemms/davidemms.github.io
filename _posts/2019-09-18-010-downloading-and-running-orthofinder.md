@@ -13,6 +13,8 @@ post_type: getting_started
 In this tutorial we're going to download OrthoFinder and check we can run it on the Example Dataset. After doing that we'll be reading for the next tutorial where we run it on a more interesting set of species. All these steps will be done on the command line so that you can just copy and run the commands yourself. 
 
 ## Downloading and running OrthoFinder
+There are a number of ways of obtaining OrthoFinder, the option below is the easiest. If you have any problems or you want to use another method then see: ([Alternative ways of getting OrthoFinder](/orthofinder_tutorials/020-alternative-ways-of-getting-OrthoFinder.html))
+
 
 1. Create a directory to work in. Open a terminal and run the commands:
 ```
