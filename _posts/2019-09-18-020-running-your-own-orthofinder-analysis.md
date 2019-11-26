@@ -36,7 +36,7 @@ for f in *fa ; do python ~/orthofinder-tutorial/OrthoFinder/tools/primary_transc
 ```
 Shortening the filename is also a good ideas as it keeps the results tidy as the filenames are used to refer to the species, e.g. I shorten to Homo_sapiens.fa.
 
-8. Run OrthoFinder (if you've not performed the above steps yourself but would like to run OrthoFinder you can get the prepared files here: [primary_transcripts.tar.gz]({{ site.github.url }}/assets/data/primary_transcripts.tar.gz).)
+8. Run OrthoFinder (if you've not performed the above steps yourself but would like to run OrthoFinder you can get the prepared files here: [primary_transcripts.tar.gz]({{ site.github.url }}/https://bioinformatics.plants.ox.ac.uk/davidemms/public_data/primary_transcripts.tar.gz).)
 ```
 orthofinder -f primary_transcripts/
 ```
