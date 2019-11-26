@@ -19,14 +19,14 @@ We're going to perform a phylogenomic analysis across a set of model species: mo
 
 1. Create a folder called "proteomes". It's best if there aren't any spaces in the full path for this folder (e.g. "/home/david/orthofinder-tutorial/proteomes/" and not "/home/david/orthofinder tutorial/proteomes/").
 
-2. Go to <https://www.ensembl.org/>, this is generally the first place to look from proteomes. Click on "Human" under "Favourite genomes". (If you're downloading data from other websites you might find this post useful: [Getting input data](/orthofinder_tutorials/110-getting-input-data.html))
+2. Go to <https://www.ensembl.org/>, this is generally the first place to look for proteomes. Click on "Human" under "Favourite genomes". (If you're downloading data from other websites you might find this post useful: [Getting input data](/orthofinder_tutorials/110-getting-input-data.html))
 
 3. OrthoFinder requires as input the amino acid sequences for all the protein coding genes in your species of interest. The sequences for each species should be in a separate file. When a genome of a species is sequenced and made available, two major steps are performed, assembly and annotation. Assembly is the piecing together of the individual reads into the genome sequence. Annotation is the identification of features of interest in the genome assembly, such as protein coding genes. Therefore, the files we need will often be in a section called 'annotation'. On Ensembl, on the right hand side, under "Gene annotation" click "Download FASTA".
  <img src="{{ site.github.url }}/assets/img/ensembl_human_genome.png">
   
-4. Click on the "pep" folder and then download the file "Homo_sapiens.GRCh38.pep.all.fa.gz" to the folder you created.
+4. Click on the "pep" folder (which contains the peptide sequences) and then download the file "Homo_sapiens.GRCh38.pep.all.fa.gz" to the folder you created.
 
-5. Go back to the Ensembl main page and repeat for Mouse, Zebrafish, Tropical clawed frog (*Xenopus tropicalis*, under 'Amphibians'), *Drosophila melanogaster* and *C. elegans*. If there is a choice of files, chose the '.pep.all.fa.gz' file. 
+5. Go back to the Ensembl main page and repeat for Mouse, Zebrafish, Tropical clawed frog (*Xenopus tropicalis*, under 'Amphibians'), *Drosophila melanogaster* and *C. elegans*. If there is a choice of files, choose the '.pep.all.fa.gz' file. 
 
 6. Open a terminal and navigate to the directory that you downloaded the files to. The files are all compressed (they end in '.gz'), decompress them all using the command `gunzip *.gz`. 
 

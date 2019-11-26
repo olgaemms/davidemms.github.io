@@ -24,9 +24,10 @@ The first thing I like to check is how many genes were assigned to orthogroups. 
 
 (This info is also in **Comparative_Genomics_Statistics/Statistics_Overall.tsv**.) 
 
-That's pretty good, in general it's nice to see at least 80% of your genes assigned to orthogroups. Let's also check the percentages on a per species basis. There's a tab-delimited file called **Comparative_Genomics_Statistics/Statistics_PerSpecies.tsv**. Like other ".tsv" files from OrthoFinder this is best viewed in a spreadsheet program like Excel or LibreOffice Calc. These files might be handled correctly on your computer automatically or you might need to tell it explicitly that they are tab-delimited. Here is how you would do that with LibreOffice or Excel.
+That's pretty good, in general it's nice to see at least 80% of your genes assigned to orthogroups. Fewer than this means that you are probably missing orthology relationships that actually exist for some of the remaining genes, poor species sampling is the most likely cause for this. Let's also check the percentages on a per species basis. There's a tab-delimited file called **Comparative_Genomics_Statistics/Statistics_PerSpecies.tsv**. Like other ".tsv" files from OrthoFinder this is best viewed in a spreadsheet program like Excel or LibreOffice Calc. These files might be handled correctly on your computer automatically or you might need to tell it explicitly that they are tab-delimited. Here is how you would do that with LibreOffice or Excel.
 
 **LibreOffice:**
+
  <img src="{{ site.github.url }}/assets/img/TabDelimited_LibreOffice.png">
 
 **Excel:** (You may have to select 'All Files' at the bottom right hand corner of the open file dialog first in order to see .tsv files.)
@@ -37,6 +38,7 @@ Once you've opened this file you'll see that the vertebrates all have over 90% o
 
 ## Species Tree
 Let's look at the species tree next. [Dendroscope](http://dendroscope.org/) is a tree viewer you can download and run locally and is the best option if you're going to look at more than a few trees. Alternatively, there are also a number of options you can run from you're web browser, e.g. the [ETE Toolkit tree viewer](http://etetoolkit.org/treeview/). Using one of these, open the file **Species_Tree/SpeciesTree_rooted.txt**. As this file has bootstrap values Dendroscope will need you to select the option "Interpret as edge labels" to view them correctly. The species tree looks like this:
+
  <img src="{{ site.github.url }}/assets/img/SpeciesTree_rooted.png">
 
  This tree has been inferred by OrthoFinder using the [STAG](https://doi.org/10.1101/267914) algorithm and rooted using the [STRIDE](https://doi.org/10.1093/molbev/msx259) algoirithm so it's ready to interpret (ordinarily you would have to root a tree yourself). You can see here that *Drosophila* and *C. elegans* are on longer branches than the other species, as mentioned above. If you know what the species tree should look like, you should check that the tree matches what you expect. The tree OrthoFinder inferred here is correct.
@@ -76,7 +78,7 @@ This gives a summary of gene duplication events. Each node shows the number of w
 
 [ ![]({{ site.github.url }}/assets/img/Gene_Duplication_Events_N3.png) ]({{ site.github.url }}/assets/img/Gene_Duplication_Events_N3.png)
 
-Each gene duplication event is cross-references to the species tree node, the orthogroup/gene tree in which it occurred and the location in that gene tree. It also list the genes descended from each of the two copies arising from the gene duplication event. We can check this out for our FBgn0005648 orthologues. For this we need to look at the gene tree in the **Resolved_Gene_Trees/OG0002001_tree.txt**. This directory contains the gene trees with the nodes labelled. These files show how OrthoFinder interpreted the gene trees when inferring orthologues and gene duplication events. They can differ slightly from the original gene trees if OrthoFinder identifies a more parsimonious interpretation of the tree.
+Each gene duplication event is cross-referenced to the species tree node, the orthogroup/gene tree in which it occurred and the location in that gene tree. It also lists the genes descended from each of the two copies arising from the gene duplication event. We can check this out for our FBgn0005648 orthologues. For this we need to look at the gene tree in the **Resolved_Gene_Trees/OG0002001_tree.txt**. This directory contains the gene trees with the nodes labelled. These files show how OrthoFinder interpreted the gene trees when inferring orthologues and gene duplication events. They can differ slightly from the original gene trees that came directly from the tree inference step (available in **Gene_Trees/**). To get the Resolved Gene Trees OrthoFinder carries out a Duplication-Loss-Coalescence analysis to identify the more parsimonious interpretation of the tree.
 
 <img src="{{ site.github.url }}/assets/img/OG0002001_resolved_tree.png">
 
@@ -87,7 +89,7 @@ Reading from the table, there was a gene duplication event at node n3 with both 
 If you're interested in gene duplication events then this table contains a lot of data. Across these six species OrthoFinder identified 39,174 gene duplication events, all of which are cross-referenced to the gene tree in which they occurred! These events are also summarised by orthogroup and by species tree node in the files **Duplications_per_Orthogroup.tsv** and **Duplications_per_Species_Tree_Node.tsv** which are both in the directory **Comparative_Genomics_Statistics/**.
 
 ## Orthogroups
-Often we're interested in group-wise species comparisons, that is comparisons across a clade of species rather than between a pair of species. The generalisation of orthology to multiple species is the orthogroup. Just like orthologues are the genes descended from a single gene in the last common ancestor of a pair of species and orthogroup is the set of genes descended from a single gene in a group of species. Each gene tree from OrthoFinder, for example the one above, is for one orthogroup. The orthogroup gene tree is the tree we need to look at if we want it to include all pairwise orthologues. And even though some of the genes within an orthogroup can be paralogs of one another, if we tried to take any genes out then we would also be removing orthologs too.
+Often we're interested in group-wise species comparisons, that is comparisons across a clade of species rather than between a pair of species. The generalisation of orthology to multiple species is the orthogroup. Just like orthologues are the genes descended from a single gene in the last common ancestor of a pair of species an orthogroup is the set of genes descended from a single gene in a group of species. Each gene tree from OrthoFinder, for example the one above, is for one orthogroup. The orthogroup gene tree is the tree we need to look at if we want it to include all pairwise orthologues. And even though some of the genes within an orthogroup can be paralogs of one another, if we tried to take any genes out then we would also be removing orthologs too.
 
 So if we want to do a comparison of the 'equivalent' genes in a set of species, we need to do the comparison across the genes in an othogroup. The orthogroups are in the file **Orthogroups/Orthogroups.tsv**. This table has one orthogroup per line and one spcies per column and is ordered from largest orthogroup to smallest. There is also a file in the legacy OrthoMCL format: **/Orthogroups/Orthogroups.txt**.
 

@@ -21,7 +21,7 @@ In the second case, it is good to ensure you have sufficient species sampling so
 If you're interested in what happened on a particular branch of the species tree, then you should likewise ensure good species sampling&mdash;ideally at least two species below the branch, at least two species on the closest branch above and two or more species in the outgroup.
 
 ### Transcriptomes & low quality genomes
-In general it is good to use the best annotated genomes available, but OrthoFinder is pretty robust to missing genes so this is not a big of a concern. One problem that can arise with transcriptomes is when you start with ~100,000 transcripts per species. This can be computationally expensive and will likely result in a very large number of files being generated, so be careful in such cases.
+In general it is good to use the best annotated genomes available, but OrthoFinder is pretty robust to missing genes so this is not a big concern. One problem that can arise with transcriptomes is when you start with ~100,000 transcripts per species. This can be computationally expensive and will likely result in a very large number of files being generated, so be careful in such cases.
 
 ### Which proteome version to use
 OrthoFinder uses the amino acid sequences for the protein coding genes. This is generally in a folder for the species called "annotation". The ideal is to use a single primary/longest transcript variant for each gene. This will also reduce the runtime considerably. Often the files are gzipped (end in .gz) and so need to be extracted first (e.g. with the command: `gunzip Danio_rerio.GRCz11.pep.all.fa.gz`)  

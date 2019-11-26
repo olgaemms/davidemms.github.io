@@ -17,7 +17,7 @@ title: Step-by Step Tutorials
 
 <h3>Supplemental</h3>
 <ul class="posts">
-  {% for post in site.posts %}
+  {% for post in posts_in_order %}
     {% if post.post_type == "supplementary" %}
     <li itemscope>
       <a href="{{ site.github.url }}{{ post.url }}">{{ post.title }}</a>

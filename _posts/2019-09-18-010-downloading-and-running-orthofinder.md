@@ -10,7 +10,7 @@ post_type: getting_started
 ---
 
 ## Plan for this tutorial
-In this tutorial we're going to download OrthoFinder and check we can run it on the Example Dataset. After doing that we'll be reading for the next tutorial where we run it on a more interesting set of species. All these steps will be done on the command line so that you can just copy and run the commands yourself. 
+In this tutorial we're going to download OrthoFinder and check we can run it on the Example Dataset. After doing that we'll be reading for the next tutorial where we run it on a more interesting set of species. OrthoFinder can be run on Linux or Mac. All these steps will be done on the command line so that you can just copy and run the commands yourself. There are many online tutorials and references if you're not used to the command line, here is a nice short one that covers the basics: <https://www.techspot.com/guides/835-linux-command-line-basics/>.
 
 ## Downloading and running OrthoFinder
 There are a number of ways of obtaining OrthoFinder, the option below is the easiest. If you have any problems or you want to use another method then see: ([Alternative ways of getting OrthoFinder](/orthofinder_tutorials/020-alternative-ways-of-getting-OrthoFinder.html))
@@ -50,7 +50,7 @@ This will print all the OrthoFinder command line options.
 ./orthofinder -f ExampleData/
 ```
 
-### 2. A quick look at the results
+## A quick look at the results
 
 When you run OrthoFinder you should get something like this:
 ```
