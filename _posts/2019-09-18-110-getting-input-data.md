@@ -21,4 +21,4 @@ Proteomes may be available in a number of places. The ([Running your own OrthoFi
 4. Go to the top of the page, and click "Download Selected Files". They'll be in a package with the original directory structure so you'll have to get each of the files, put them in a single file and gunzip them. You don't need to run the `primary_transcript.py` script on them as Phytozome has already done that step.
 
 ## Others?
-Let me know if you need(ed) pointers for any other sites.
+Let me know if you think pointers to any other sites would be helpful.
