@@ -15,7 +15,7 @@ In the first tutorial you downloaded OrthoFinder and checked you could run it on
 In this tutorial we're going to download the proteomes for a set of species we want to analyse, tidy the files up a little and run OrthoFinder on those species. In the next tutorial we'll dive into the results. 
 
 ## Downloading proteomes for our species
-We're going to perform a phylogenomic analysis across a set of model species: mouse, human, frog, zebrafish, fruit fly and *Caenorhabditis elegans*. If you've returned to this tutorial to guide you through your own analysis you may want check out the advice on species selection in the post, [Getting the most from your OrthoFinder analysis](/orthofinder_tutorials/040-getting-the-most-from-your-orthofinder-analysis.html).
+We're going to perform a phylogenomic analysis across a set of model species: mouse, human, frog, zebrafish, Japanese puffer (*Takifugu rubripes*) and fruit fly (*Drosophila melanogaster*). If you've returned to this tutorial to guide you through your own analysis you may want check out the advice on species selection in the post, [Getting the most from your OrthoFinder analysis](/orthofinder_tutorials/040-getting-the-most-from-your-orthofinder-analysis.html).
 
 1. Create a folder called "proteomes". It's best if there aren't any spaces in the full path for this folder (e.g. "/home/david/orthofinder-tutorial/proteomes/" and not "/home/david/orthofinder tutorial/proteomes/").
 
@@ -26,7 +26,7 @@ We're going to perform a phylogenomic analysis across a set of model species: mo
   
 4. Click on the "pep" folder (which contains the peptide sequences) and then download the file "Homo_sapiens.GRCh38.pep.all.fa.gz" to the folder you created.
 
-5. Go back to the Ensembl main page and repeat for Mouse, Zebrafish, Tropical clawed frog (*Xenopus tropicalis*, under 'Amphibians'), *Drosophila melanogaster* and *C. elegans*. If there is a choice of files, choose the '.pep.all.fa.gz' file. 
+5. Go back to the Ensembl main page and repeat for Mouse, Zebrafish, Tropical clawed frog (*Xenopus tropicalis*, under 'Amphibians'), *Takifugu rubripes* and *Drosophila melanogaster*. If there is a choice of files, choose the '.pep.all.fa.gz' file. 
 
 6. Open a terminal and navigate to the directory that you downloaded the files to. The files are all compressed (they end in '.gz'), decompress them all using the command `gunzip *.gz`. 
 
@@ -34,7 +34,7 @@ We're going to perform a phylogenomic analysis across a set of model species: mo
 ```
 for f in *fa ; do python ~/orthofinder-tutorial/OrthoFinder/tools/primary_transcript.py $f ; done
 ```
-Shortening the filename also keeps the results tidy as the filenames are used to refer to the species, e.g. I shorten to Homo_sapiens.fa.
+Shortening the filename is also a good ideas as it keeps the results tidy as the filenames are used to refer to the species, e.g. I shorten to Homo_sapiens.fa.
 
 8. Run OrthoFinder (if you've not performed the above steps yourself but would like to run OrthoFinder you can get the prepared files here: [primary_transcripts.tar.gz]({{ site.github.url }}/assets/data/primary_transcripts.tar.gz).)
 ```
@@ -44,17 +44,14 @@ orthofinder -f primary_transcripts/
 9. That's it! It will take from around 20 mins to a few hours to run, depending on how many cores you have and the speed of your machine. Assuming everything worked fine then the last few lines of OrthoFinder's output will look something like this:
 
 ```
-Species-by-species orthologues directory:
-   /home/emms/orthofinder-tutorial/proteomes/primary_transcripts/OrthoFinder/Results_Oct11/Orthologues/
+Results:
+    /home/emms/orthofinder_tutorial/proteomes/primary_transcripts/OrthoFinder/Results_Nov26/
 
-Orthogroup statistics:
-   Statistics_PerSpecies.tsv   Statistics_Overall.tsv   Orthogroups_SpeciesOverlaps.tsv
-
-OrthoFinder assigned 116961 genes (89.4% of total) to 18098 orthogroups. Fifty percent of all genes were in orthogroups with 7 or more genes (G50 was 7) and were contained in the largest 5006 orthogroups (O50 was 5006). There were 4189 orthogroups with all species present and 1270 of these consisted entirely of single-copy genes.
+OrthoFinder assigned 121743 genes (92.9% of total) to 17981 orthogroups. Fifty percent of all genes were in orthogroups with 7 or more genes (G50 was 7) and were contained in the largest 5076 orthogroups (O50 was 5076). There were 5485 orthogroups with all species present and 1755 of these consisted entirely of single-copy genes.
 
 CITATION:
  When publishing work that uses OrthoFinder please cite:
- Emms D.M. & Kelly S. (2015), Genome Biology 16:157
+ Emms D.M. & Kelly S. (2019), Genome Biology 20:238
 
  If you use the species tree in your work then please also cite:
  Emms D.M. & Kelly S. (2017), MBE 34(12): 3267-3278
