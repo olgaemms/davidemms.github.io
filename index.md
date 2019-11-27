@@ -9,6 +9,7 @@ OrthoFinder is a software program for phylogenetic orthology inference.
 <figure>
 <a href="{{ site.github.url }}/assets/img/Workflow.png">
 <img src="{{ site.github.url }}/assets/img/Workflow.png">
+</a>
 <figcaption>
     <div align="right"><b>OrthoFinder workflow</b></div>
 </figcaption>
