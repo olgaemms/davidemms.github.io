@@ -7,7 +7,7 @@ tags: [documentation]
 post_type: supplementary
 ---
 
-In most cases the easiest way to get OrthoFinder is to download the lastest release package from [github](https://github.com/davidemms/OrthoFinder/releases) as described here: [Downloading and running OrthoFinder](/orthofinder_tutorials/010-downloading-and-running-orthofinder.html). Here are some alternatives in case of problems:
+In most cases the easiest way to get OrthoFinder is to download the lastest release package from [github](https://github.com/davidemms/OrthoFinder/releases) as described here: [Downloading and running OrthoFinder]({% post_url 2019-09-18-downloading-and-running-orthofinder %}). Here are some alternatives in case of problems:
 
 **If the binary package doesn't work on your computer then:**
 

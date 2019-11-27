@@ -13,7 +13,7 @@ post_type: getting_started
 In this tutorial we're going to download OrthoFinder and check we can run it on the Example Dataset. After doing that we'll be reading for the next tutorial where we run it on a more interesting set of species. OrthoFinder can be run on Linux or Mac. All these steps will be done on the command line so that you can just copy and run the commands yourself. There are many online tutorials and references if you're not used to the command line, here is a nice short one that covers the basics: <https://www.techspot.com/guides/835-linux-command-line-basics/>.
 
 ## Downloading and running OrthoFinder
-There are a number of ways of obtaining OrthoFinder, the option below is the easiest. If you have any problems or you want to use another method then see: ([Alternative ways of getting OrthoFinder](/orthofinder_tutorials/020-alternative-ways-of-getting-OrthoFinder.html))
+There are a number of ways of obtaining OrthoFinder, the option below is the easiest. If you have any problems or you want to use another method then see: ([Alternative ways of getting OrthoFinder]({% post_url 2019-10-19-alternative-ways-of-getting-OrthoFinder %}))
 
 
 1. Create a directory to work in. Open a terminal and run the commands:
@@ -161,4 +161,4 @@ OrthoFinder creates a directory within the directory with your input files and p
 
 If everything worked then you should have got a similar looking results directory. That's it, we're done!
 
-In the next tutorial ([Running your own OrthoFinder analysis](/orthofinder_tutorials/020-running-your-own-orthofinder-analysis.html)) we will look at how to prepare and run our own analysis and after that there's a tutorial showing how to explore all the results. 
+In the next tutorial ([Running your own OrthoFinder analysis]({% post_url 2019-09-19-running-your-own-orthofinder-analysis %})) we will look at how to prepare and run our own analysis and after that there's a tutorial showing how to explore all the results. 
