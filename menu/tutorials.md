@@ -1,7 +1,11 @@
 ---
 layout: page
-title: Step-by Step Tutorials
+title: Step-by-Step Tutorials
 ---
+
+If you're new follow tutorials 1-3, which will guide you through running an example analysis and exploring the results.
+
+Once you're ready to run OrthoFinder on your own data read tutorial 4, which gives tips on best practices. You can then use tutorial 2 as a template for the steps to follow.
 
 <h3>Getting Started</h3>
 <ul class="posts">

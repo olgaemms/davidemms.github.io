@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "2. Running your own OrthoFinder analysis"
+title: "2. Running an example OrthoFinder analysis"
 author: "David Emms"
 categories: orthofinder_tutorials
 tags: [documentation]

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "1. Downloading and running OrthoFinder"
+title: "1. Downloading and checking OrthoFinder"
 author: "David Emms"
 categories: orthofinder_tutorials
 tags: [documentation]
@@ -161,4 +161,4 @@ OrthoFinder creates a directory within the directory with your input files and p
 
 If everything worked then you should have got a similar looking results directory. That's it, we're done!
 
-In the next tutorial ([Running your own OrthoFinder analysis]({% post_url 2019-09-19-running-your-own-orthofinder-analysis %})) we will look at how to prepare and run our own analysis and after that there's a tutorial showing how to explore all the results. 
+In the next tutorial ([Running an example OrthoFinder analysis]({% post_url 2019-09-19-running-an-example-orthofinder-analysis %})) we will look at how to prepare and run our own analysis and after that there's a tutorial showing how to explore all the results. 

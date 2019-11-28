@@ -7,7 +7,7 @@ tags: [documentation]
 post_type: supplementary
 ---
 
-Proteomes may be available in a number of places. The ([Running your own OrthoFinder analysis]({% post_url 2019-09-19-running-your-own-orthofinder-analysis %})) showed how to download data from Ensembl, here are a few pointers for other popular websites.
+Proteomes may be available in a number of places. The ([Running an example OrthoFinder analysis]({% post_url 2019-09-19-running-an-example-orthofinder-analysis %})) showed how to download data from Ensembl, here are a few pointers for other popular websites.
 
 ## Phytozome
 1. You'll first need to create an account and log in.
