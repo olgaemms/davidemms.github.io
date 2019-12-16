@@ -25,6 +25,7 @@ It takes as input the proteomes for the species you want to analyse and from the
 
 As well as large scale analyses, it can be used to carefully check individual ortholog relationships prior to experimental studies. 
 
+## OrthoFinder vs OrthoMCL and other orthology inference software
 Unlike other orthology inference software OrthoFinder uses gene trees. This means you can check every ortholog relationship in the gene tree it came from. The use of gene trees gives very high ortholog inference accuracy: 
 
 <figure>
@@ -34,7 +35,7 @@ Unlike other orthology inference software OrthoFinder uses gene trees. This mean
 </figcaption>
 </figure>
 
-Despite OrthoFinder using a more rigorous, gene-tree based approach to ortholog inference it is incredibly fast! 
+Despite OrthoFinder using a more rigorous, gene-tree based approach to ortholog inference it is incredibly fast! In addition to this, it also returns far more comparative genomics data than other methods (orthogroups, orthologs, rooted genes trees, gene duplication events etc.)
 
 <figure>
 <img src="{{ site.github.url }}/assets/img/Runtime.png">

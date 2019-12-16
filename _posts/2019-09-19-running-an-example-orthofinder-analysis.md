@@ -59,4 +59,4 @@ CITATION:
 
 ```
 
-That's it! The next tutorial is: [Diving into the results]({% post_url 2019-09-20-diving-into-the-results %}). If your OrthoFinder run hasn't finished then you can still continue with the next tutorial, it contains a link where you can download an archive of the results.
+That's it! The next tutorial is: [Diving into the OrthoFinder results]({% post_url 2019-09-20-diving-into-the-results %}). If your OrthoFinder run hasn't finished then you can still continue with the next tutorial, it contains a link where you can download an archive of the results.

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "3. Diving into the results"
+title: "3. Diving into the OrthoFinder results"
 author: "David Emms"
 categories: orthofinder_tutorials
 tags: [documentation]
@@ -12,7 +12,7 @@ In the last tutorial ([Running an example OrthoFinder analysis]({% post_url 2019
 
 ## Plan for this tutorial
 
-In this tutorial we're going to explore the results of the OrthoFinder's comparative genomics analysis. The analysis OrthoFinder performs is pretty extensive so we'll start with the key results and explore them as you would explore your own results. You can also see a complete listing of the OrthoFinder results files on the GitHub page: [https://github.com/davidemms/OrthoFinder#what-orthofinder-provides](https://github.com/davidemms/OrthoFinder#what-orthofinder-provides).
+In this tutorial we're going to explore the results of the OrthoFinder's comparative genomics analysis. The analysis OrthoFinder performs is pretty extensive so we'll start with the key OrthoFinder results files and explore them as you would explore your own results. You can also see a complete listing of the OrthoFinder results files on the GitHub page: [https://github.com/davidemms/OrthoFinder#what-orthofinder-provides](https://github.com/davidemms/OrthoFinder#what-orthofinder-provides).
 
 ## A first look at the results
 By default OrthoFinder creates a results directory called 'OrthoFinder' inside the input proteome directory and puts the results here. My results directory looks like this: 
