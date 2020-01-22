@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "4. Getting the most from your OrthoFinder analysis"
+title: "4. OrthoFinder best practices"
 author: "David Emms"
 categories: orthofinder_tutorials
 tags: [documentation]

@@ -12,10 +12,10 @@ post_type: getting_started
 In the first tutorial you downloaded OrthoFinder and checked you could run it on the Example Dataset. Now you're ready to run our own analysis!
 
 ## Plan for this tutorial
-In this tutorial we're going to download the proteomes for a set of species we want to analyse, tidy the files up a little and run OrthoFinder on those species. In the next tutorial we'll dive into the results. 
+In this tutorial we're going to download the proteomes for a set of species we want to analyse, tidy the files up a little and run OrthoFinder on those species. In the next tutorial we'll explore the results. 
 
 ## Downloading proteomes for our species
-We're going to perform a phylogenomic analysis across a set of model species: mouse, human, frog, zebrafish, Japanese puffer (*Takifugu rubripes*) and fruit fly (*Drosophila melanogaster*). If you've returned to this tutorial to guide you through your own analysis you may want check out the advice on species selection in the post, [Getting the most from your OrthoFinder analysis]({% post_url 2019-09-21-getting-the-most-from-your-orthofinder-analysis %}).
+We're going to perform a phylogenomic analysis across a set of model species: mouse, human, frog, zebrafish, Japanese puffer (*Takifugu rubripes*) and fruit fly (*Drosophila melanogaster*). If you've returned to this tutorial to guide you through your own analysis you may want check out the advice on species selection in the post, [OrthoFinder best practices]({% post_url 2019-09-21-orthofinder-best-practices %}).
 
 1. Create a folder called "proteomes". It's best if there aren't any spaces in the full path for this folder (e.g. "/home/david/orthofinder-tutorial/proteomes/" and not "/home/david/orthofinder tutorial/proteomes/").
 
@@ -59,4 +59,4 @@ CITATION:
 
 ```
 
-That's it! The next tutorial is: [Diving into the OrthoFinder results]({% post_url 2019-09-20-diving-into-the-results %}). If your OrthoFinder run hasn't finished then you can still continue with the next tutorial, it contains a link where you can download an archive of the results.
+That's it! The next tutorial is: [Exploring OrthoFinder's results]({% post_url 2019-09-20-exploring-orthofinders-results %}). If your OrthoFinder run hasn't finished then you can still continue with the next tutorial, it contains a link where you can download an archive of the results.

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "3. Diving into the OrthoFinder results"
+title: "3. Exploring OrthoFinder's results"
 author: "David Emms"
 categories: orthofinder_tutorials
 tags: [documentation]
@@ -43,7 +43,7 @@ Let's look at the species tree next. [Dendroscope](http://dendroscope.org/) is a
 
  This tree has been inferred by OrthoFinder using the [STAG](https://doi.org/10.1101/267914) algorithm and rooted using the [STRIDE](https://doi.org/10.1093/molbev/msx259) algoirithm so it's ready to interpret (ordinarily you would have to root a tree yourself first). You can see here that *Drosophila* is on longer branches than the other species, as mentioned above. If you know what the species tree should look like, you should check that the tree matches what you expect. The tree OrthoFinder inferred here is correct.
  
- If the species tree is not correct then this will not impact the orthogroup inference, but it might affect the orthologue inference in some of the gene trees which have gene duplication events. In this case, you'll probably want to run the very last bit of the OrthoFinder analysis again with the corrected species tree (`-ft` and `-s` options). This is generally pretty quick, as all the computationally expensive calculation (inference of orthogroups and gene trees etc.) has already been done. See [Getting the most from your OrthoFinder analysis]({% post_url 2019-09-21-getting-the-most-from-your-orthofinder-analysis %}).
+ If the species tree is not correct then this will not impact the orthogroup inference, but it might affect the orthologue inference in some of the gene trees which have gene duplication events. In this case, you'll probably want to run the very last bit of the OrthoFinder analysis again with the corrected species tree (`-ft` and `-s` options). This is generally pretty quick, as all the computationally expensive calculation (inference of orthogroups and gene trees etc.) has already been done. See [OrthoFinder best practices]({% post_url 2019-09-21-orthofinder-best-practices %}).
  
  > Aside:
  > You'll notice in this tree that the support values are not all 100%, which you might have expected them to be for this dataset. With the default options, species tree inference is performed with [STAG](https://www.biorxiv.org/content/10.1101/267914v1), which uses the proportion of species trees derived from **single-locus gene trees** supporting each bipartition as its measure of support. This is a more stringent measure than standard bootstrap support from a multiple sequence alignment. If instead the "-M msa" option had been used then a concatenated multiple sequence alignment would have been used for the species tree inference instead and support values of 100% would have been seen for all bipartition. In this case the support values correspond to bootstrap replicates taken from the full, **multi-gene alignment**, which is a different thing entirely. This is the most common measure for support and will always report higher support values for the same data.

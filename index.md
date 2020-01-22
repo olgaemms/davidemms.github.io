@@ -44,8 +44,16 @@ Despite OrthoFinder using a more rigorous, gene-tree based approach to ortholog 
 </figcaption>
 </figure>
 
-You can read the OrthoFinder papers here:
+## OrthoFinder citation
+
+#### OrthoFinder's orthogroup and ortholog inference are described here:
+
+[Emms, D.M., Kelly, S. OrthoFinder: solving fundamental biases in whole genome comparisons dramatically improves orthogroup inference accuracy. Genome Biol 16, 157 (2015)](https://doi.org/10.1186/s13059-015-0721-2)
 
 [Emms, D.M., Kelly, S. OrthoFinder: phylogenetic orthology inference for comparative genomics. Genome Biol 20, 238 (2019)](https://doi.org/10.1186/s13059-019-1832-y)
 
-[Emms, D.M., Kelly, S. OrthoFinder: solving fundamental biases in whole genome comparisons dramatically improves orthogroup inference accuracy. Genome Biol 16, 157 (2015)](https://doi.org/10.1186/s13059-015-0721-2)
+#### If you use the OrthoFinder species tree then also cite:
+
+[Emms D.M. & Kelly S. STRIDE: Species Tree Root Inference from Gene Duplication Events (2017), Mol Biol Evol 34(12): 3267-3278](https://doi.org/10.1093/molbev/msx259)
+
+[Emms D.M. & Kelly S. STAG: Species Tree Inference from All Genes (2018), bioRxiv https://doi.org/10.1101/267914](https://doi.org/10.1101/267914)
