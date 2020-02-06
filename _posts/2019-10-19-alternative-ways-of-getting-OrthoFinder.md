@@ -7,13 +7,9 @@ tags: [documentation]
 post_type: supplementary
 ---
 
-In most cases the easiest way to get OrthoFinder is to download the lastest release package from [github](https://github.com/davidemms/OrthoFinder/releases) as described here: [Downloading and checking OrthoFinder]({% post_url 2019-09-18-downloading-and-checking-orthofinder %}). Here are some alternatives in case of problems.
+In most cases the easiest way to get OrthoFinder is to download the latest release package from [github](https://github.com/davidemms/OrthoFinder/releases) as described here: [Downloading and checking OrthoFinder]({% post_url 2019-09-18-downloading-and-checking-orthofinder %}). Here are some alternatives in case of problems.
 
 ## Common problems
-
-**If the binary package doesn't work on your computer then:**
-
-* It may be that you have an old version of glibc on your computer you might see an error which includes this message: `ImportError: /usr/lib64/libc.so.6: version GLIBC_2.18' not found`. In this case you might still be able to use the **OrthoFinder_glibc-2.17.tar.gz** package from the [releases](https://github.com/davidemms/OrthoFinder/releases) page instead and then follow the instructions as before. You can also just use the standard python version, **OrthoFinder_source.tar.gz**, see below.
 
 **OrthoFinder help file prints, but it cannot run one of the dependencies:**
 
@@ -26,6 +22,10 @@ The best way to use OrthoFinder on a Mac is to use the source code version and i
 ## Source code version
 
 * You can also just use the standard python version, **OrthoFinder_source.tar.gz** from the [releases](https://github.com/davidemms/OrthoFinder/releases) page. This will require a python installation (version 2.7 or 3) together with the numpy and scipy libraries. There are detailed instructions here: <https://github.com/davidemms/OrthoFinder/#python-source-code-version>.
+
+**If the binary package doesn't work on your computer then:**
+
+* Previously, a second packaged version of OrthoFinder was provided, **OrthoFinder_glibc-2.17.tar.gz** to support older operating systems. Now, by default there is only one packaged version and it is built with glbic version 2.15. This should be compatible with all linux machines. If for some reason this isn't the case and you get an error message like the following then please let me know: `ImportError: /usr/lib64/libc.so.6: version GLIBC_2.15' not found`. Alternatively, you can also use the standard python version, **OrthoFinder_source.tar.gz**, described above.
 
 ## Bioconda 
 OrthoFinder is available with bioconda: <https://bioconda.github.io/recipes/orthofinder/README.html>. Thanks to the many people who I'm aware of having contributed to setting this up: Anthony Bretaudeau, Nicola Soranzo, Sacha Laurent, Christian Brueffer, Nathan Weeks, Johannes Köster, pvanheus, Björn Grüning, Emil Hägglund, Andreas Sjödin, Gildas Le Corguillé & Devon Ryan. And thanks also to anyone else who has helped.
