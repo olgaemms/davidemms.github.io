@@ -10,11 +10,12 @@ post_type: getting_started
 ---
 
 ## Plan for this tutorial
-In this tutorial we're going to download OrthoFinder and check we can run it on the Example Dataset. After doing that we'll be reading for the next tutorial where we run it on a more interesting set of species. All these steps will be done on the command line so that you can just copy and run the commands yourself. There are many online tutorials and reference pages if you're not used to the command line, here is a nice short one that covers the basics: <https://www.techspot.com/guides/835-linux-command-line-basics/>.
+In this tutorial we're going to download OrthoFinder and check we can run it on the Example Dataset. After doing that we'll be ready for the next tutorial where we run it on a more interesting set of species. All these steps will be done on the command line so that you can just copy and paste the commands yourself. If you are not familiar with the command line there are many online tutorials and reference pages, here is a nice short one that covers the basics: <https://www.techspot.com/guides/835-linux-command-line-basics/>.
 
-## Downloading and running OrthoFinder on Linux
-There are a number of ways of obtaining OrthoFinder, the option below is the easiest on Linux. For Macs, or if you have any problems or you want to use another method, see: [Alternative ways of getting OrthoFinder]({% post_url 2019-10-19-alternative-ways-of-getting-OrthoFinder %}).
+## Downloading and running OrthoFinder
+There are a number of ways of obtaining OrthoFinder, the option below is the easiest on Linux. 
 
+**For Macs** it's easiest to use Bioconda. Follow the instructions here: [Alternative ways of getting OrthoFinder]({% post_url 2019-10-19-alternative-ways-of-getting-OrthoFinder %}) and then return to step 1 of this tutorial once you've installed it.
 
 1. Create a directory to work in. Open a terminal and run the commands:
 ```
@@ -22,7 +23,7 @@ mkdir ~/orthofinder_tutorial
 cd ~/orthofinder_tutorial
 ```
 
-2. Download the latest version of OrthoFinder
+2. Download the latest version of OrthoFinder (if you're using Bioconda you still need to do this step to get the Example Dataset)
 ```
 wget https://github.com/davidemms/OrthoFinder/releases/latest/download/OrthoFinder.tar.gz
 ```
@@ -39,17 +40,32 @@ tar xzvf OrthoFinder.tar.gz
 cd OrthoFinder/
 ```
 
-4. Request OrthoFinder to print its help file
-```
-./orthofinder -h
-```
-This will print all the OrthoFinder command line options. 
-    >If you have an old OS you might not have the required libc version and get an error which includes `version 'GLIBC_2.25' not found`. In this case, you can download a version of OrthoFinder using an older library: `wget https://github.com/davidemms/OrthoFinder/releases/latest/download/OrthoFinder_glibc-2.17.tar.gz` and use that.
+4. Request OrthoFinder to print its help file.
 
+    On Linux:
+    ```
+    ./orthofinder -h
+    ```
+
+    Or, if you've installed OrthoFinder using Bioconda run the version it installed in the system path rather than the local copy in this directory:
+    ```
+    orthofinder -h
+    ```
+
+    This will print all the OrthoFinder command line options. 
+  
 5. Run OrthoFinder on the Example Dataset
-```
-./orthofinder -f ExampleData/
-```
+
+    Linux:
+    ```
+    ./orthofinder -f ExampleData/
+    ```
+    
+    Or, using Bioconda:
+    ```
+    orthofinder -f ExampleData/
+    ```
+
 
 ## A quick look at the results
 
