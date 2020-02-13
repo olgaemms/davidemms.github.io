@@ -17,7 +17,7 @@ In this tutorial we're going to download the proteomes for a set of species we w
 ## Downloading proteomes for our species
 We're going to perform a phylogenomic analysis across a set of model species: mouse, human, frog, zebrafish, Japanese puffer (*Takifugu rubripes*) and fruit fly (*Drosophila melanogaster*). If you've returned to this tutorial to guide you through your own analysis you may want check out the advice on species selection in the post, [OrthoFinder best practices]({% post_url 2019-09-21-orthofinder-best-practices %}).
 
-1. Create a folder called "proteomes". It's best if there aren't any spaces in the full path for this folder (e.g. "/home/david/orthofinder-tutorial/proteomes/" and not "/home/david/orthofinder tutorial/proteomes/").
+1. Create a folder called "proteomes". It's best if there aren't any spaces in the full path for this folder (e.g. "/home/david/orthofinder_tutorial/proteomes/" and not "/home/david/orthofinder tutorial/proteomes/").
 
 2. Go to <https://www.ensembl.org/>, this is generally the first place to look for proteomes. Click on "Human" under "Favourite genomes". (If you're downloading data from other websites you might find this post useful: [Getting OrthoFinder input data]({%post_url 2019-10-20-getting-input-data %}))
 
@@ -32,7 +32,7 @@ We're going to perform a phylogenomic analysis across a set of model species: mo
 
 7. The files from Ensembl will contain many transcript per gene. If we ran OrthoFinder on these raw files it would take 10x longer than necessary and could lower the accuracy. We'll use a script provided with OrthoFinder to extract just the longest transcript variant per gene and run OrthoFinder on these files:
 ```
-for f in *fa ; do python ~/orthofinder-tutorial/OrthoFinder/tools/primary_transcript.py $f ; done
+for f in *fa ; do python ~/orthofinder_tutorial/OrthoFinder/tools/primary_transcript.py $f ; done
 ```
 Shortening the filename is also a good ideas as it keeps the results tidy as the filenames are used to refer to the species, e.g. I shorten to Homo_sapiens.fa.
 
