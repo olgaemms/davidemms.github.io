@@ -71,7 +71,7 @@ To run OrthoFinder on Windows using Docker:
 
 1. Open the Windows PowerShell from the Start Menu
 
-2. Make a directory to work in & cd into it (you can paste into the shell by right-clicking on it): 
+2. Make a directory to work in & cd into it: 
 ``` 
 mkdir orthofinder
 cd orthofinder
@@ -100,9 +100,11 @@ Expand-Archive -LiteralPath ExampleData.zip -DestinationPath .
 docker run --ulimit nofile=1000000:1000000 -it --rm -v C:\Users\dops0000\orthofinder\ExampleData\:/input:Z davidemms/orthofinder orthofinder -f /input
 ```
 
-7. You can now use the same command to call OrthoFinder on your input folder of proteomes. See the other tutorials for further guidance.
+7. On the Docker Desktop icon on the task bar > Settings > Resources you can increase the CPUs and Memory available to applications running in Docker.
 
-    > Running OrthoFinder via Docker is likely to be less quick than it would be run directly on a linux server but should be more than enough for many analyses.
+8. You can now use the same command to call OrthoFinder on your own input folder of proteomes. See the other tutorials for further guidance.
+
+    > Running OrthoFinder via Docker is likely to be less quick than it would be running directly on a linux server but should be ok for running smaller analyses.
 
 ## Installing OrthoFinder
 OrthoFinder doesn't need to be installed, you can just call it from where you downloaded it. If you do want to install it somewhere, you will need to include the config.json file in the directory containing orthofinder or in the "source_of" directory if using the source code version.
