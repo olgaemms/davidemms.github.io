@@ -15,7 +15,7 @@ In this tutorial we're going to download OrthoFinder and check we can run it on 
 ## Downloading and running OrthoFinder
 There are a number of ways of obtaining OrthoFinder, the option below is the easiest on Linux. 
 
-**For Macs** it's easiest to use Bioconda. Follow the instructions here: [Alternative ways of getting OrthoFinder]({% post_url 2019-10-19-alternative-ways-of-getting-OrthoFinder %}) and then return to step 1 of this tutorial once you've installed it.
+**For Macs** it's easiest to use Bioconda and **for Windows** you can used Docker. Follow the instructions here: [Alternative ways of getting OrthoFinder]({% post_url 2019-10-19-alternative-ways-of-getting-OrthoFinder %}) and then return to step 1 of this tutorial once you've installed it.
 
 1. Create a directory to work in. Open a terminal and run the commands:
 ```
