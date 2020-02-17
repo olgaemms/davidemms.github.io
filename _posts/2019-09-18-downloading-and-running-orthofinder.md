@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "1. Downloading and checking OrthoFinder"
+title: "1. Downloading and running OrthoFinder"
 author: "David Emms"
 categories: orthofinder_tutorials
 tags: [documentation]

@@ -9,7 +9,7 @@ post_type: supplementary
 
 ## OrthoFinder on Linux
 
-On Linux the easiest way to get OrthoFinder is to download the latest release package from [github](https://github.com/davidemms/OrthoFinder/releases) as described here: [Downloading and checking OrthoFinder]({% post_url 2019-09-18-downloading-and-checking-orthofinder %}). This contains everything that's required in a single package, so you don't need to install anything.
+On Linux the easiest way to get OrthoFinder is to download the latest release package from [github](https://github.com/davidemms/OrthoFinder/releases) as described here: [Downloading and running OrthoFinder]({% post_url 2019-09-18-downloading-and-running-orthofinder %}). This contains everything that's required in a single package, so you don't need to install anything.
 
 ## OrthoFinder on Windows
 
@@ -20,7 +20,7 @@ The best way to use OrthoFinder on Windows is to install the Windows Subsystem f
 2. Once you've completed the steps there and confirmed the installation is successful, search for 'Ubuntu' in your Start menu to get a bash terminal
 
 3. Follow the steps in the first tutorial as you would for Linux. I.e. download the 'OrthoFinder.tar.gz' package, unpack it and run it:
-[Downloading and checking OrthoFinder]({% post_url 2019-09-18-downloading-and-checking-orthofinder %})
+[Downloading and running OrthoFinder]({% post_url 2019-09-18-downloading-and-running-orthofinder %})
 
 > You can also run OrthoFinder on Windows using Docker, but running it using this way will be many times slower and so isn't recommended. 
 
