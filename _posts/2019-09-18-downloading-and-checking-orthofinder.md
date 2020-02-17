@@ -13,9 +13,15 @@ post_type: getting_started
 In this tutorial we're going to download OrthoFinder and check we can run it on the Example Dataset. After doing that we'll be ready for the next tutorial where we run it on a more interesting set of species. All these steps will be done on the command line so that you can just copy and paste the commands yourself. If you are not familiar with the command line there are many online tutorials and reference pages, here is a nice short one that covers the basics: <https://www.techspot.com/guides/835-linux-command-line-basics/>.
 
 ## Downloading and running OrthoFinder
-There are a number of ways of obtaining OrthoFinder, the option below is the easiest on Linux. 
+There are a number of ways of obtaining OrthoFinder.
 
-**For Macs** it's easiest to use Bioconda and **for Windows** you can used Docker. Follow the instructions here: [Alternative ways of getting OrthoFinder]({% post_url 2019-10-19-alternative-ways-of-getting-OrthoFinder %}) and then return to step 1 of this tutorial once you've installed it.
+**For Linux:** follow the instructions below.
+
+**For Macs:** it's easiest to use Bioconda to install and then follow the instructions below.
+
+**For Windows** it is best to install the Windows Subsystem for Linux and then continue as for Linux below. 
+
+For Mac and Windows using Bioconda/Windows Subsystem for Linux, follow the instructions here: [Alternative ways of getting OrthoFinder]({% post_url 2019-10-19-alternative-ways-of-getting-OrthoFinder %}) and then return to Step 1 of this tutorial.
 
 1. Create a directory to work in. Open a terminal and run the commands:
 ```
@@ -32,7 +38,7 @@ wget https://github.com/davidemms/OrthoFinder/releases/latest/download/OrthoFind
 
     `curl -L -O https://github.com/davidemms/OrthoFinder/releases/latest/download/OrthoFinder.tar.gz`
     
-    > Alternatively, go to the GitHub releases page and download OrthoFinder: <https://github.com/davidemms/OrthoFinder/releases>
+    > Or go to the GitHub releases page and download OrthoFinder: <https://github.com/davidemms/OrthoFinder/releases>
     
 3. Extract the package, and cd into the OrthoFinder directory
 ```
@@ -54,7 +60,7 @@ cd OrthoFinder/
 
     This will print all the OrthoFinder command line options. 
   
-5. Run OrthoFinder on the Example Dataset
+5. Run OrthoFinder on the Example Dataset (this is a very small dataset so should run in a few of minutes, normal datasets will take longer)
 
     Linux:
     ```

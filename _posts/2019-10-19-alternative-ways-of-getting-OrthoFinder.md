@@ -7,17 +7,28 @@ tags: [documentation]
 post_type: supplementary
 ---
 
+## OrthoFinder on Linux
+
 On Linux the easiest way to get OrthoFinder is to download the latest release package from [github](https://github.com/davidemms/OrthoFinder/releases) as described here: [Downloading and checking OrthoFinder]({% post_url 2019-09-18-downloading-and-checking-orthofinder %}). This contains everything that's required in a single package, so you don't need to install anything.
+
+## OrthoFinder on Windows
+
+The best way to use OrthoFinder on Windows is to install the Windows Subsystem for Linux. I'd recommend the Ubuntu installation, which runs OrthoFinder with no problems. 
+
+1. Follow the guide here for installing the Linux Subsystem here: <https://docs.microsoft.com/en-us/windows/wsl/install-win10>
+
+2. Once you've completed the steps there and confirmed the installation is successful, search for 'Ubuntu' in your Start menu to get a bash terminal
+
+3. Follow the steps in the first tutorial as you would for Linux. I.e. download the 'OrthoFinder.tar.gz' package, unpack it and run it:
+[Downloading and checking OrthoFinder]({% post_url 2019-09-18-downloading-and-checking-orthofinder %})
+
+> You can also run OrthoFinder on Windows using Docker, but running it using this way will be many times slower and so isn't recommended. 
 
 ## OrthoFinder on Mac
 
 The best way to use OrthoFinder on a Mac is to use Bioconda, see the Bioconda section below for details.
 
-An alternative is to use the source code version and install the dependencies yourself: python together with the numpy and scipy libraries plus the external programs mcl, diamond & fastme. See <https://github.com/davidemms/OrthoFinder#installing-dependencies>. There is also a Docker image.
-
-## OrthoFinder on Windows
-
-You can run OrthoFinder on Windows using Docker if your computer meets Docker's system requirements. See below for details.
+> Alternatives include using the source code version and installing the dependencies yourself: python together with the numpy and scipy libraries plus the external programs mcl, diamond & fastme. See <https://github.com/davidemms/OrthoFinder#installing-dependencies>. There is also a Docker image, but this will run more slowly.
 
 ## Bioconda 
 Bioconda provides a very easy way to install OrthoFinder on Linux or Mac. You can refer to the [Bioconda Getting Started](https://bioconda.github.io/user/install.html) page for details, but the basic steps are:
@@ -63,7 +74,7 @@ You can also just use the standard python version, **OrthoFinder_source.tar.gz**
 
 
 ## Docker
-OrthoFinder is available on Docker: [davidemms/orthofinder](https://hub.docker.com/r/davidemms/orthofinder) thanks to Thomas Roder & Monjeaud Cyril for their work on this. 
+OrthoFinder is available on Docker: [davidemms/orthofinder](https://hub.docker.com/r/davidemms/orthofinder) thanks to Thomas Roder & Monjeaud Cyril for their work on this. Running OrthoFinder via Docker is likely to be **many times slower** than it would be running directly on a linux server or using the Windows Subsystem for Linux, so those approaches are generally recommended instead.
 
 To install Docker, follow the instructions here: <https://docs.docker.com/install/>
 
@@ -103,8 +114,6 @@ docker run --ulimit nofile=1000000:1000000 -it --rm -v C:\Users\dops0000\orthofi
 7. On the Docker Desktop icon on the task bar > Settings > Resources you can increase the CPUs and Memory available to applications running in Docker.
 
 8. You can now use the same command to call OrthoFinder on your own input folder of proteomes. See the other tutorials for further guidance.
-
-    > Running OrthoFinder via Docker is likely to be less quick than it would be running directly on a linux server but should be ok for running smaller analyses.
 
 ## Installing OrthoFinder
 OrthoFinder doesn't need to be installed, you can just call it from where you downloaded it. If you do want to install it somewhere, you will need to include the config.json file in the directory containing orthofinder or in the "source_of" directory if using the source code version.
