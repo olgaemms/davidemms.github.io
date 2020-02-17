@@ -63,7 +63,7 @@ You can also just use the standard python version, **OrthoFinder_source.tar.gz**
 
 
 ## Docker
-OrthoFinder is available on Docker: [davidemms/orthofinder](https://hub.docker.com/repository/docker/davidemms/orthofinder) thanks to Thomas Roder & Monjeaud Cyril for their work on this. 
+OrthoFinder is available on Docker: [davidemms/orthofinder](https://hub.docker.com/r/davidemms/orthofinder) thanks to Thomas Roder & Monjeaud Cyril for their work on this. 
 
 To install Docker, follow the instructions here: <https://docs.docker.com/install/>
 
