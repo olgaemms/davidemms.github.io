@@ -30,7 +30,7 @@ We're going to perform a phylogenomic analysis across a set of model species: mo
 
 6. Open a terminal and navigate to the directory that you downloaded the files to. The files are all compressed (they end in '.gz'), decompress them all using the command `gunzip *.gz`. 
 
-7. The files from Ensembl will contain many transcript per gene. If we ran OrthoFinder on these raw files it would take 10x longer than necessary and could lower the accuracy. We'll use a script provided with OrthoFinder to extract just the longest transcript variant per gene and run OrthoFinder on these files:
+7. The files from Ensembl will contain many transcripts per gene. If we ran OrthoFinder on these raw files it would take 10x longer than necessary and could lower the accuracy. We'll use a script provided with OrthoFinder to extract just the longest transcript variant per gene and run OrthoFinder on these files:
 ```
 for f in *fa ; do python ~/orthofinder_tutorial/OrthoFinder/tools/primary_transcript.py $f ; done
 ```
